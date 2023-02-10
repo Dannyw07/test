@@ -3,6 +3,8 @@ import "../Register/register.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { MuiTelInput } from "mui-tel-input";
+import { useFormik } from "formik";
+import * as yup from "yup";
 
 const Register = () => {
   const [phone, setPhone] = React.useState("");
@@ -25,13 +27,20 @@ const Register = () => {
                 width: "97%",
                 display: "grid",
                 gridTemplateRows: "repeat(1, 1fr)",
+                columnGap: "10px",
               },
             }}
             noValidate
             autoComplete="off"
           >
             <TextField id="filled-basic" label="Username" variant="filled" />
-            <TextField id="filled-basic" label="Email" variant="filled" />
+            <TextField
+              id="email"
+              label="Email"
+              variant="filled"
+              name="email"
+              type="email"
+            />
             <MuiTelInput
               onlyCountries={["MY"]}
               value={phone}
