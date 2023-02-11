@@ -46,11 +46,17 @@ const Register = () => {
               value={phone}
               onChange={handleChange}
             />
-            <TextField id="filled-basic" label="Password" variant="filled" />
             <TextField
-              id="filled-basic"
+              id="password"
+              label="Password"
+              variant="filled"
+              type="password"
+            />
+            <TextField
+              id="conFirmPassword"
               label="Confirm Password"
               variant="filled"
+              type="password"
             />
           </Box>
         </div>
