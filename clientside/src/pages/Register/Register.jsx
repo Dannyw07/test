@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import { MuiTelInput } from "mui-tel-input";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import Navbar from "../../components/Navbar/Navbar";
 
 const Register = () => {
   const [phone, setPhone] = React.useState("");
@@ -14,6 +15,7 @@ const Register = () => {
   };
   return (
     <div className="reg">
+      <Navbar />
       <div className="registerContainer">
         <div className="regTitle">
           <h1>Create an Acccount</h1>
@@ -52,12 +54,12 @@ const Register = () => {
               variant="filled"
               type="password"
             />
-            <TextField
+            {/* <TextField
               id="conFirmPassword"
               label="Confirm Password"
               variant="filled"
               type="password"
-            />
+            /> */}
           </Box>
         </div>
 
