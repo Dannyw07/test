@@ -7,8 +7,18 @@ import {
   faPerson,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormHelperText from "@mui/material/FormHelperText";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 const Booking = () => {
+  const [age, setAge] = React.useState("");
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   return (
     <div>
       <Navbar />
@@ -18,7 +28,7 @@ const Booking = () => {
         <div className="headerSearch ">
           <div
             className="bg-white d-flex align-items-center rounded justify-content-between border border-5 border-solid p-1 mx-auto "
-            style={{ height: "70px", color: "#febb02" }}
+            style={{ height: "80px", color: "#febb02" }}
           >
             <div
               className="headerSearchItem d-flex align-items-center gap-10 "
@@ -37,11 +47,24 @@ const Booking = () => {
               style={{ height: "70px", color: "lightgray" }}
             >
               <FontAwesomeIcon icon={faGolfBallTee} className="headerIcon" />
-              <input
-                type="text"
-                placeholder="Where are you going?"
-                className="headerSearchInput border-0 "
-              />
+              <FormControl sx={{ m: 1, minWidth: 200 }}>
+                <InputLabel id="demo-simple-select-helper-label">
+                  Number of Holes
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-helper-label"
+                  id="demo-simple-select-helper"
+                  value={age}
+                  label="Age"
+                  onChange={handleChange}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={9}>9</MenuItem>
+                  <MenuItem value={18}>18</MenuItem>
+                </Select>
+              </FormControl>
             </div>
 
             <div
@@ -49,11 +72,26 @@ const Booking = () => {
               style={{ height: "70px", color: "lightgray" }}
             >
               <FontAwesomeIcon icon={faPerson} className="headerIcon" />
-              <input
-                type="text"
-                placeholder="Where are you going?"
-                className="headerSearchInput border-0 "
-              />
+              <FormControl sx={{ m: 1, minWidth: 200 }}>
+                <InputLabel id="demo-simple-select-helper-label">
+                  Number of Players
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-helper-label"
+                  id="demo-simple-select-helper"
+                  value={age}
+                  label="Age"
+                  onChange={handleChange}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={10}>1</MenuItem>
+                  <MenuItem value={20}>2</MenuItem>
+                  <MenuItem value={30}>3</MenuItem>
+                  <MenuItem value={40}>4</MenuItem>
+                </Select>
+              </FormControl>
             </div>
 
             <div className="headerSearchItem d-flex align-items-center gap-10 ">
