@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
+import Carousell from "../../components/Carousel/Carousell";
 
 const Homepage = () => {
   return (
@@ -8,7 +9,10 @@ const Homepage = () => {
       <div className="homepageContainer">
         <h1>title</h1>
         <h2>home</h2>
+        <Carousell />
       </div>
+
+      <h1>Features</h1>
     </div>
   );
 };
