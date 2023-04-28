@@ -15,6 +15,7 @@ import Select from "@mui/material/Select";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import Footer from "../../components/Footer/Footer";
 
 const Booking = () => {
   const [hole, setHole] = React.useState("");
@@ -128,18 +129,22 @@ const Booking = () => {
       </div>
 
       <h1>test</h1>
+      <h1>test</h1>
+      <h1>test</h1>
 
-      <div className=" m5 p-5 bg-secondary ">
-        <h2 className="text-start m-5  ">Featured</h2>
+      <div className=" m-4 p-5 bg-dark d-flex justify-content-center align-items-center ">
+        <h2 className="text-start m-5 text-center" style={{ color: "white" }}>
+          Have a question? Reach out any time
+        </h2>
 
-        <div className="p-5">
-          <h3>Latest News</h3>
-          <h4>
-            Prepare to have your senses and skills challenged. Now you can
-            experience to play at Premier Course!
-          </h4>
-        </div>
+        <button
+          className="bg-success m-0"
+          style={{ color: "white", height: "80px", width: "200px" }}
+        >
+          CONTACT US
+        </button>
       </div>
+      <Footer />
     </div>
   );
 };
