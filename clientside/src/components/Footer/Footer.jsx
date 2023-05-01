@@ -9,8 +9,8 @@ import {
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="bg-white mt-5 d-flex">
+    <div className="footer mt-5">
+      <div className="bg-white  d-flex">
         <div className="footer-area-1 col-md-3 col-sm-6 ">
           <section className="widget text-2">
             <div className="widget-inner ">
@@ -56,11 +56,13 @@ const Footer = () => {
             <div className="widget-inner ">
               <h3 className="widget-title">Hours of Operation</h3>
               <div className="widget-content">
-                <div className="m-5 text-start  list-unstyled">
-                  <li>Mon-Wed: 6:00am – 8:00pm</li>
-                  <li>Thurs-Fri: 6:30am – 7:30pm</li>
-                  <li>Sat: 7:00am – 9:00pm</li>
-                  <li>Sun: 8:00am – 8:00pm</li>
+                <div className="m-5 text-start  ">
+                  <ul className="list-unstyled">
+                    <li>Mon-Wed: 6:00am – 8:00pm</li>
+                    <li>Thurs-Fri: 6:30am – 7:30pm</li>
+                    <li>Sat: 7:00am – 9:00pm</li>
+                    <li>Sun: 8:00am – 8:00pm</li>
+                  </ul>
                 </div>
               </div>
             </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Image from "react-bootstrap/Image";
+import Footer from "../../components/Footer/Footer";
 // import Pagination from "@mui/material/Pagination";
 // import Stack from "@mui/material/Stack";
 
@@ -83,6 +84,7 @@ const News = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

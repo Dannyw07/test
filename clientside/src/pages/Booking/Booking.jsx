@@ -1,11 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "../../components/Navbar/Navbar";
-import {
-  faCalendarDays,
-  faGolfBallTee,
-  faPerson,
-} from "@fortawesome/free-solid-svg-icons";
+import { faGolfBallTee, faPerson } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -16,6 +12,7 @@ import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import Footer from "../../components/Footer/Footer";
+import { useNavigate } from "react-router-dom/dist/umd/react-router-dom.development";
 
 const Booking = () => {
   const [hole, setHole] = React.useState("");
@@ -27,6 +24,12 @@ const Booking = () => {
 
   const handleChange2 = (event) => {
     setPlayer(event.target.value);
+  };
+
+  const navigate = useNavigate();
+
+  const navigateToContacts = () => {
+    navigate("/contact");
   };
   return (
     <div style={{ height: "100%" }}>
@@ -138,6 +141,7 @@ const Booking = () => {
         </h2>
 
         <button
+          onClick={navigateToContacts}
           className="bg-success m-0"
           style={{ color: "white", height: "80px", width: "200px" }}
         >

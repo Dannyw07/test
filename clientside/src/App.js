@@ -1,13 +1,19 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Booking from "./pages/Booking/Booking";
 import News from "./pages/News/News";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
+  // const navigate = useNavigate();
+
+  // const navigateToContacts = () => {
+  //   navigate("/contact");
+  // };
   return (
     <div className="App">
       <BrowserRouter>
@@ -17,6 +23,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </div>
