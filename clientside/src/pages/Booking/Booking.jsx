@@ -31,6 +31,10 @@ const Booking = () => {
   const navigateToContacts = () => {
     navigate("/contact");
   };
+
+  const handleSearch = () => {
+    navigate("/availableTime");
+  };
   return (
     <div style={{ height: "100%" }}>
       <Navbar />
@@ -111,6 +115,7 @@ const Booking = () => {
               <button
                 className="headerBtn p-10 fw-500 border-0 bg-primary rounded"
                 style={{ height: "60px", width: "140px", color: " white" }}
+                onClick={handleSearch}
               >
                 Search
               </button>

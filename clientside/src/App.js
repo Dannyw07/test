@@ -7,6 +7,7 @@ import Booking from "./pages/Booking/Booking";
 import News from "./pages/News/News";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./pages/Contact/Contact";
+import AvailableTime from "./pages/AvailableTime/AvailableTime";
 
 function App() {
   // const navigate = useNavigate();
@@ -24,6 +25,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/availableTime" element={<AvailableTime />} />
         </Routes>
       </BrowserRouter>
     </div>
