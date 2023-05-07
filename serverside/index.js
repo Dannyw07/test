@@ -15,6 +15,10 @@ const db = mysql.createConnection({
 });
 
 app.post("/register", (req, res) => {
+  const users_firstName = req.body.firstName;
+  const users_lastName = req.body.lastName;
+  const users_email = req.body.email;
+  const users_password = req.body.password;
   db.query(
     "INSERT INTO users (users_firstName, users_lastName, users_email, users_password) VALUES (?,?,?,?)",
     [users_firstName, users_lastName, users_email, users_password],
