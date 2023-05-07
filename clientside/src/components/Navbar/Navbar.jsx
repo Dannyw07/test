@@ -15,8 +15,6 @@ function Navbar() {
           <Link to="/booking">Booking</Link>
           <Link to="/news">News</Link>
           <Link to="/contact">Contact</Link>
-          <Link to="/register">Register</Link>
-          <Link to="/login">Login</Link>
         </div>
         <button onClick={() => setShowLinks(!showLinks)}>
           {/* <ReorderIcon />*/}
@@ -24,7 +22,10 @@ function Navbar() {
         </button>
       </div>
       <div className="rightSide">
-        <div className="links-2"></div>
+        <div className="links-2">
+          <Link to="/register">Sign Up</Link>
+          <Link to="/login">Login</Link>
+        </div>
       </div>
     </div>
   );
