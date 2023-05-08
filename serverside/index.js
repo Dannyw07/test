@@ -28,6 +28,26 @@ app.post("/register", (req, res) => {
   );
 });
 
+app.post("/login", (req, res) => {
+  const users_email = req.body.email;
+  const users_password = req.body.password;
+
+  db.query(
+    "SELECT * FROM users WHERE users_email=? AND users_password=?",
+    [users_email, users_password],
+    (err, result) => {
+      if (err) {
+        res.send({ err: err });
+      }
+      if (result) {
+        res.send(result);
+      } else {
+        res.send({ message: "Wrong email/password combination!" });
+      }
+    }
+  );
+});
+
 app.listen(3001, () => {
   console.log("running on port 3001, lets get this fyp2 done! ");
 });
