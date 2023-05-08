@@ -14,6 +14,9 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Navbar from "../../components/Navbar/Navbar";
 import Axios from "axios";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
 
 function Copyright(props) {
   return (
@@ -36,6 +39,31 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
+  // let schema = Yup.object().shape({
+  //   email: Yup.string().email("Not a proper email"), // pass your error message string
+  // });
+
+  // // check validity
+  // schema
+  //   .validate({
+  //     email: "not.a.valid.email",
+  //   })
+  //   .catch((err) => {
+  //     console.log(err.name); // ValidationError
+  //     console.log(err.errors); // ['Not a proper email']
+  //   });
+
+  const validateSchema = Yup.object().shape({
+    firstName: Yup.string().required("First Name cannot be empty").min(3),
+    lastName: Yup.string().required("Last Name cannot be empty").min(3),
+    // email: Yup.string()
+    //   .trim()
+    //   .email("Invalid email address")
+    //   .required("Email is required")
+    //   .matches(/^(?!.*@[^,]*,)/),
+    email: Yup.string().required().email(),
+  });
+
   const signUp = () => {
     Axios.post("http://localhost:3001/register", {
       firstName: userFirstName,
@@ -52,7 +80,15 @@ export default function SignUp() {
   const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (event) => {
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  //   console.log({
+  //     email: data.get("email"),
+  //     password: data.get("password"),
+  //   });
+  // };
+  const handleData = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
@@ -60,6 +96,12 @@ export default function SignUp() {
       password: data.get("password"),
     });
   };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(validateSchema) });
 
   return (
     <ThemeProvider theme={theme}>
@@ -85,7 +127,7 @@ export default function SignUp() {
           <Box
             component="form"
             noValidate
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmit(handleData)}
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
@@ -101,6 +143,11 @@ export default function SignUp() {
                   onChange={(e) => {
                     setUserFirstName(e.target.value);
                   }}
+                  // error
+                  // helperText="Invalid First Name"
+                  {...register("firstName")}
+                  error={errors.firstName ? true : false}
+                  helperText={errors.firstName?.message}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -114,19 +161,28 @@ export default function SignUp() {
                   onChange={(e) => {
                     setUserLastName(e.target.value);
                   }}
+                  {...register("lastName")}
+                  error={errors.lastName ? true : false}
+                  helperText={errors.lastName?.message}
+                  // error
+                  // helperText="Invalid Last Name"
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  required={true}
+                  required
                   fullWidth
                   id="email"
                   label="Email Address"
                   name="email"
-                  autoComplete="email"
+                  autoComplete="off"
                   onChange={(e) => {
                     setUserEmail(e.target.value);
                   }}
+                  // error
+                  // helperText="Invalid E-mail"
+                  error={errors.email ? true : false}
+                  helperText={errors.email?.message}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -142,6 +198,8 @@ export default function SignUp() {
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
+                  // error
+                  // helperText="Invalid Password"
                 />
               </Grid>
               <Grid item xs={12}>

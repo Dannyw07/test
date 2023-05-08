@@ -16,6 +16,9 @@ import Navbar from "../../components/Navbar/Navbar";
 import { useState } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
 
 function Copyright(props) {
   return (
@@ -38,6 +41,20 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+  const validateSchema = Yup.object().shape({
+    // firstName: Yup.string().required("First Name cannot be empty").min(6),
+    email: Yup.string()
+      .required("Email is required")
+      .email("Email is invalid!")
+      .matches(/^(?!.*@[^,]*,)/),
+    password: Yup.string().required("Password is required"),
+  });
+
+  const {
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(validateSchema) });
+
   const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
@@ -51,7 +68,16 @@ export default function SignIn() {
     });
   };
 
-  const handleSubmit = (event) => {
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  //   navigate("/MyAccount");
+  //   console.log({
+  //     email: data.get("email"),
+  //     password: data.get("password"),
+  //   });
+  // };
+  const handleData = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     navigate("/MyAccount");
@@ -89,7 +115,7 @@ export default function SignIn() {
           </Typography>
           <Box
             component="form"
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmit(handleData)}
             noValidate
             sx={{ mt: 1 }}
           >
@@ -105,6 +131,8 @@ export default function SignIn() {
               onChange={(e) => {
                 setUserEmail(e.target.value);
               }}
+              error={errors.email ? true : false}
+              helperText={errors.email?.message}
             />
             <TextField
               margin="normal"
@@ -119,6 +147,8 @@ export default function SignIn() {
               onChange={(e) => {
                 setUserPassword(e.target.value);
               }}
+              error={errors.password ? true : false}
+              helperText={errors.password?.message}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../Navbar/navbar.css";
+import { faBell } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //import ReorderIcon from "@mui/icons-material/Reorder";
 
@@ -23,6 +25,7 @@ function Navbar() {
       </div>
       <div className="rightSide">
         <div className="links-2">
+          {/* <FontAwesomeIcon icon={faBell} /> */}
           <Link to="/register">Sign Up</Link>
           <Link to="/login">Login</Link>
         </div>
