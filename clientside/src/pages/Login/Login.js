@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Navbar from "../../components/Navbar/Navbar";
 import { useState } from "react";
 import Axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -37,6 +38,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+  const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
 
@@ -52,12 +54,18 @@ export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    navigate("/MyAccount");
     console.log({
       email: data.get("email"),
       password: data.get("password"),
     });
   };
 
+  const [showButton, setShowButton] = useState(true);
+
+  const toggleButton = () => {
+    setShowButton(!showButton);
+  };
   return (
     <ThemeProvider theme={theme}>
       <div>
@@ -125,6 +133,8 @@ export default function SignIn() {
             >
               Sign In
             </Button>
+
+            {/* {showButton && <button onClick={toggleButton}>Hide Button</button>} */}
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">

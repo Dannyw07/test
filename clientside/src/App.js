@@ -8,6 +8,7 @@ import News from "./pages/News/News";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./pages/Contact/Contact";
 import AvailableTime from "./pages/AvailableTime/AvailableTime";
+import MyAccount from "./pages/MyAccount/MyAccount";
 
 function App() {
   // const navigate = useNavigate();
@@ -26,6 +27,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/availableTime" element={<AvailableTime />} />
+          <Route path="/MyAccount" element={<MyAccount />} />
         </Routes>
       </BrowserRouter>
     </div>
