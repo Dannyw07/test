@@ -13,6 +13,8 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Navbar from "../../components/Navbar/Navbar";
+import { useState } from "react";
+import Axios from "axios";
 
 function Copyright(props) {
   return (
@@ -35,6 +37,18 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+
+  const login = () => {
+    Axios.post("http://localhost:3001/login", {
+      email: userEmail,
+      password: userPassword,
+    }).then((response) => {
+      console.log(response);
+    });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -80,6 +94,9 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={(e) => {
+                setUserEmail(e.target.value);
+              }}
             />
             <TextField
               margin="normal"
@@ -89,7 +106,11 @@ export default function SignIn() {
               label="Password"
               type="password"
               id="password"
-              autoComplete="current-password"
+              // autoComplete="current-password"
+              autoComplete="off"
+              onChange={(e) => {
+                setUserPassword(e.target.value);
+              }}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -100,6 +121,7 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={login}
             >
               Sign In
             </Button>
