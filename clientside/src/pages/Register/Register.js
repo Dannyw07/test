@@ -17,6 +17,7 @@ import Axios from "axios";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -61,7 +62,8 @@ export default function SignUp() {
     //   .email("Invalid email address")
     //   .required("Email is required")
     //   .matches(/^(?!.*@[^,]*,)/),
-    email: Yup.string().required().email(),
+    email: Yup.string().required("Email cannot be empty").email(),
+    password: Yup.string().required("Password cannot be empty").min(3),
   });
 
   const signUp = () => {
@@ -88,9 +90,13 @@ export default function SignUp() {
   //     password: data.get("password"),
   //   });
   // };
+
+  const navigate = useNavigate();
   const handleData = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
+
     const data = new FormData(event.currentTarget);
+    navigate("/MyAccount");
     console.log({
       email: data.get("email"),
       password: data.get("password"),
@@ -181,6 +187,7 @@ export default function SignUp() {
                   }}
                   // error
                   // helperText="Invalid E-mail"
+                  {...register("email")}
                   error={errors.email ? true : false}
                   helperText={errors.email?.message}
                 />
@@ -200,6 +207,9 @@ export default function SignUp() {
                   }}
                   // error
                   // helperText="Invalid Password"
+                  {...register("password")}
+                  error={errors.password ? true : false}
+                  helperText={errors.password?.message}
                 />
               </Grid>
               <Grid item xs={12}>

@@ -50,11 +50,6 @@ export default function SignIn() {
     password: Yup.string().required("Password is required"),
   });
 
-  const {
-    handleSubmit,
-    formState: { errors },
-  } = useForm({ resolver: yupResolver(validateSchema) });
-
   const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
@@ -92,6 +87,13 @@ export default function SignIn() {
   const toggleButton = () => {
     setShowButton(!showButton);
   };
+
+  const {
+    Login,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(validateSchema) });
+
   return (
     <ThemeProvider theme={theme}>
       <div>
@@ -131,6 +133,8 @@ export default function SignIn() {
               onChange={(e) => {
                 setUserEmail(e.target.value);
               }}
+              // {...login("email")}
+              {...Login("email")}
               error={errors.email ? true : false}
               helperText={errors.email?.message}
             />
@@ -147,6 +151,7 @@ export default function SignIn() {
               onChange={(e) => {
                 setUserPassword(e.target.value);
               }}
+              {...Login("password")}
               error={errors.password ? true : false}
               helperText={errors.password?.message}
             />
