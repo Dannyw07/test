@@ -13,12 +13,12 @@ function handleClick(event) {
   console.info("You clicked a breadcrumb.");
 }
 
-const data = [
-  { name: "8:00 AM", age: "Available", gender: "Male" },
-  { name: "9:00 AM", age: "Closed", gender: "" },
-  { name: "10:00 AM", age: "Unavailable", gender: "" },
-  { name: "11:00 AM", age: "Available", gender: "Male" },
-];
+// const data = [
+//   { name: "8:00 AM", age: "Available", gender: "Male" },
+//   { name: "9:00 AM", age: "Closed", gender: "" },
+//   { name: "10:00 AM", age: "Unavailable", gender: "" },
+//   { name: "11:00 AM", age: "Available", gender: "Male" },
+// ];
 
 const AvailableTime = () => {
   return (
@@ -38,7 +38,7 @@ const AvailableTime = () => {
         {/* </div> */}
       </div>
 
-      <div className="Time">
+      {/* <div className="Time">
         <table>
           <tr>
             <th>Time</th>
@@ -55,7 +55,7 @@ const AvailableTime = () => {
             );
           })}
         </table>
-      </div>
+      </div> */}
     </div>
   );
 };
