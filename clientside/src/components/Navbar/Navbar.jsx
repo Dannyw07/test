@@ -5,11 +5,19 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Avatar from "../Images/avatar.png";
 import { motion } from "framer-motion";
-
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { app } from "../../firebase.config";
 //import ReorderIcon from "@mui/icons-material/Reorder";
 
 function Navbar() {
   const [showLinks, setShowLinks] = useState(false);
+  const firebaseAuth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  const login = async () => {
+    const response = await signInWithPopup(firebaseAuth, provider);
+    console.log(response);
+  };
 
   return (
     <div className="Navbar">
@@ -43,12 +51,15 @@ function Navbar() {
 
           {/* <Link to="/register">Sign Up</Link>
           <Link to="/login">Login</Link> */}
-          <motion.img
-            whileTap={{ scale: 0.6 }}
-            src={Avatar}
-            alt="userProfile"
-            className="userprof"
-          />
+          <div className="userSection">
+            <motion.img
+              whileTap={{ scale: 0.6 }}
+              src={Avatar}
+              alt="userProfile"
+              className="userprof"
+              onClick={login}
+            />
+          </div>
         </div>
       </div>
     </div>
