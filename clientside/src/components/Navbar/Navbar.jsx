@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../Navbar/navbar.css";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Avatar from "../Images/avatar.png";
+import { motion } from "framer-motion";
 
 //import ReorderIcon from "@mui/icons-material/Reorder";
 
@@ -26,8 +28,27 @@ function Navbar() {
       <div className="rightSide">
         <div className="links-2">
           {/* <FontAwesomeIcon icon={faBell} /> */}
-          <Link to="/register">Sign Up</Link>
-          <Link to="/login">Login</Link>
+          <div className="cart">
+            <FontAwesomeIcon
+              icon={faCartShopping}
+              style={{ color: "#ffffff" }}
+            />
+            <div
+              className=" rounded-circle bg-danger  "
+              style={{ width: "25px", height: "25px" }}
+            >
+              <p className="paragraphColor">1</p>
+            </div>
+          </div>
+
+          {/* <Link to="/register">Sign Up</Link>
+          <Link to="/login">Login</Link> */}
+          <motion.img
+            whileTap={{ scale: 0.6 }}
+            src={Avatar}
+            alt="userProfile"
+            className="userprof"
+          />
         </div>
       </div>
     </div>

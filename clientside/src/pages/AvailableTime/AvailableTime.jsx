@@ -68,6 +68,7 @@ const AvailableTime = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

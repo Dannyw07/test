@@ -76,7 +76,7 @@
 .Navbar .rightSide {
   flex: 50%;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: center;
   padding-right: 20px;
 }
@@ -94,4 +94,24 @@
 .Navbar .rightSide button {
   display: none;
   margin-left: 20px;
+}
+.links-2 {
+  cursor: pointer;
+  width: 300px;
+  display: flex;
+  gap: 10px;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+}
+
+.paragraphColor {
+  text-align: center;
+  color: white;
+}
+
+.userprof {
+  width: 15%;
 }

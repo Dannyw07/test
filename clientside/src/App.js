@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./pages/Contact/Contact";
 import AvailableTime from "./pages/AvailableTime/AvailableTime";
 import MyAccount from "./pages/MyAccount/MyAccount";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   // const navigate = useNavigate();
@@ -17,20 +18,22 @@ function App() {
   //   navigate("/contact");
   // };
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/availableTime" element={<AvailableTime />} />
-          <Route path="/MyAccount" element={<MyAccount />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <AnimatePresence>
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/booking" element={<Booking />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/availableTime" element={<AvailableTime />} />
+            <Route path="/MyAccount" element={<MyAccount />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </AnimatePresence>
   );
 }
 

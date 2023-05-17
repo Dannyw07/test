@@ -54,7 +54,7 @@ export default function SignIn() {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
 
-  const login = () => {
+  const signin = () => {
     Axios.post("http://localhost:3001/login", {
       email: userEmail,
       password: userPassword,
@@ -67,7 +67,7 @@ export default function SignIn() {
   //   event.preventDefault();
   //   const data = new FormData(event.currentTarget);
   //   navigate("/MyAccount");
-  //   console.log({
+  //   console.log({S
   //     email: data.get("email"),
   //     password: data.get("password"),
   //   });
@@ -89,7 +89,7 @@ export default function SignIn() {
   };
 
   const {
-    Login,
+    // login,
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: yupResolver(validateSchema) });
@@ -134,7 +134,6 @@ export default function SignIn() {
                 setUserEmail(e.target.value);
               }}
               // {...login("email")}
-              {...Login("email")}
               error={errors.email ? true : false}
               helperText={errors.email?.message}
             />
@@ -151,7 +150,7 @@ export default function SignIn() {
               onChange={(e) => {
                 setUserPassword(e.target.value);
               }}
-              {...Login("password")}
+              // {...login("password")}
               error={errors.password ? true : false}
               helperText={errors.password?.message}
             />
@@ -164,7 +163,7 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              onClick={login}
+              onClick={signin}
             >
               Sign In
             </Button>

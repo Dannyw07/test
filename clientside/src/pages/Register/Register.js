@@ -40,28 +40,9 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
-  // let schema = Yup.object().shape({
-  //   email: Yup.string().email("Not a proper email"), // pass your error message string
-  // });
-
-  // // check validity
-  // schema
-  //   .validate({
-  //     email: "not.a.valid.email",
-  //   })
-  //   .catch((err) => {
-  //     console.log(err.name); // ValidationError
-  //     console.log(err.errors); // ['Not a proper email']
-  //   });
-
   const validateSchema = Yup.object().shape({
     firstName: Yup.string().required("First Name cannot be empty").min(3),
     lastName: Yup.string().required("Last Name cannot be empty").min(3),
-    // email: Yup.string()
-    //   .trim()
-    //   .email("Invalid email address")
-    //   .required("Email is required")
-    //   .matches(/^(?!.*@[^,]*,)/),
     email: Yup.string().required("Email cannot be empty").email(),
     password: Yup.string().required("Password cannot be empty").min(3),
   });
@@ -96,11 +77,13 @@ export default function SignUp() {
     // event.preventDefault();
 
     const data = new FormData(event.currentTarget);
-    navigate("/MyAccount");
+
     console.log({
       email: data.get("email"),
       password: data.get("password"),
     });
+    // navigate("/MyAccount");
+    navigate("/login");
   };
 
   const {
@@ -149,8 +132,6 @@ export default function SignUp() {
                   onChange={(e) => {
                     setUserFirstName(e.target.value);
                   }}
-                  // error
-                  // helperText="Invalid First Name"
                   {...register("firstName")}
                   error={errors.firstName ? true : false}
                   helperText={errors.firstName?.message}
