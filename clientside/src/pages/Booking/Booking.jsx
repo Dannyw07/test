@@ -59,7 +59,7 @@ const Booking = () => {
               </LocalizationProvider>
             </div>
 
-            <div
+            {/* <div
               className="headerSearchItem d-flex align-items-center gap-10 "
               style={{ height: "70px", color: "lightgray" }}
             >
@@ -82,7 +82,7 @@ const Booking = () => {
                   <MenuItem value={18}>18</MenuItem>
                 </Select>
               </FormControl>
-            </div>
+            </div> */}
 
             <div
               className="headerSearchItem d-flex align-items-center gap-10 "

@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
+import KotaOne from "../../components/Images/KotaOne.jpg"; // with import
 
 function Carousell() {
   return (
@@ -7,12 +8,13 @@ function Carousell() {
       <Carousel.Item>
         <img
           className="d-block w-100 "
-          src="https://img.olympicchannel.com/images/image/private/t_s_w960/t_s_16_9_g_auto/f_auto/primary/yebnmhlpkjmfs7oxvbzi"
+          // src="https://www.golfpass.com/travel-advisor/courses/22525-kinabalu-golf-club"
+          src={KotaOne}
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>Lee Zii Jia</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Kinabalu Golfclub</h3>
+          <p>A view from Kinabalu GolfClub</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>

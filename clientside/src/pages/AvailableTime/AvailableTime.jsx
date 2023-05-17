@@ -56,6 +56,18 @@ const AvailableTime = () => {
           })}
         </table>
       </div> */}
+      <div className="availabletimeSlots col-md m-5">
+        <div
+          className="bg-secondary bg-gradient rounded "
+          style={{ width: "250px", height: "200px" }}
+        >
+          <div className="m-2 justify-content-center">
+            <h1>08:00 AM</h1>
+            <h3>1-2 Players</h3>
+            <h3>11 Holes</h3>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

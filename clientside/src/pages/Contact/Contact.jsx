@@ -3,7 +3,6 @@ import Navbar from "../../components/Navbar/Navbar";
 import { Typography, Grid, Button, TextField } from "@mui/material";
 import validate from "validate.js";
 import emailjs from "emailjs-com";
-import * as dotenv from "dotenv";
 
 const schema = {
   name: {
