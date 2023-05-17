@@ -1,0 +1,72 @@
+.Mcontainer {
+  margin-top: 16px;
+  padding: 8px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  background-color: lightgray;
+}
+
+.ContainerItems {
+  padding: 4px;
+  background-color: #42a5f5;
+  flex: 1 1 0%;
+  height: 500px;
+}
+
+.ContainerItem {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.cItemPic {
+  width: 50px;
+  height: 50px;
+  background-color: azure;
+  border-radius: 50%;
+  overflow: hidden;
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+    drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+}
+
+.pics {
+  width: 100%;
+  height: 100%;
+}
+
+.ContainerStuff {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+  background-color: #66bb6a;
+  padding: 5px;
+  border-radius: 9999px;
+}
+
+.MainTitle {
+  text-align: justify;
+  font-size: 50px;
+  font: bold;
+}
+
+.content {
+  margin-top: 130px;
+  text-align: justify;
+}
+
+.reserveButton {
+  color: white;
+  height: 50px;
+  width: 100%;
+  border-radius: 9999px;
+  background-color: #43a047;
+  border: none;
+  font-size: larger;
+  font-weight: bold;
+}
