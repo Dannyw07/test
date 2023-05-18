@@ -14,6 +14,9 @@ import { app } from "../../firebase.config";
 import { useStateValue } from "../../context/StateProvider";
 import { actionType } from "../../context/reducer";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 //import ReorderIcon from "@mui/icons-material/Reorder";
 
 function Navbar() {
@@ -34,6 +37,16 @@ function Navbar() {
         user: providerData[0],
       });
       localStorage.setItem("user", JSON.stringify(providerData[0]));
+      toast.success("Login Successfully!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     } else {
       setIsMenu(!isMenu);
     }
@@ -51,6 +64,16 @@ function Navbar() {
     dispatch({
       type: actionType.SET_USER,
       user: null,
+    });
+    toast.success("Logout Successfully!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
     });
   };
 
@@ -93,6 +116,7 @@ function Navbar() {
               className="userprof"
               onClick={login}
             />
+            <ToastContainer />
             {/* <h6 className="name">{user ? user.displayName : null}</h6> */}
 
             {isMenu && (
@@ -111,6 +135,13 @@ function Navbar() {
                     />
                   </p>
                 )}
+                <p className="menuList">
+                  View my orders
+                  <FontAwesomeIcon
+                    icon={faRightFromBracket}
+                    style={{ color: "#f7f7f7" }}
+                  />
+                </p>
 
                 <p className="menuList" onClick={logout}>
                   Logout

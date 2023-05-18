@@ -1,0 +1,136 @@
+.TT {
+  width: 100%;
+  height: auto;
+  background: lightgray;
+  justify-content: center;
+  align-items: center;
+}
+
+.TeetimeContainer {
+  margin-top: 5px;
+}
+.TeetimeForm {
+  color: white;
+  padding: 5px;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  width: 600px;
+  height: 500px;
+  background: #fb8c00;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.TeeTimeTitle {
+  display: flex;
+  align-items: center;
+  color: gray;
+  gap: 5px;
+  text-align: left;
+}
+.FormDate {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: white;
+  color: grey;
+}
+
+.TeeTimes {
+  display: flex;
+  gap: 20px;
+  background-color: white;
+}
+.break {
+  background-color: lightgray;
+  height: 5px;
+}
+.hotdealSection {
+  background-color: white;
+}
+
+.hotdealSection h3 {
+  text-align: left;
+  color: black;
+  margin: 5px;
+}
+.hotdealContent {
+  display: flex;
+  gap: 20px;
+}
+.pill1 {
+  margin-left: 20px;
+  width: 200px;
+  border: 1px solid gray;
+  border-radius: 30px;
+  color: grey;
+  cursor: pointer;
+}
+
+.pill2 {
+  width: 200px;
+  border: 1px solid gray;
+  border-radius: 30px;
+  color: grey;
+  cursor: pointer;
+}
+.golfers {
+  background-color: white;
+  height: 100px;
+}
+.golfers h3 {
+  text-align: left;
+  color: black;
+  margin: 5px;
+}
+
+.Fees {
+  background: white;
+}
+
+.Fees p {
+  color: gray;
+  margin-bottom: 0;
+}
+.Fees h5 {
+  color: black;
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+.ReserveNow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  color: black;
+  justify-content: space-between;
+  height: 90px;
+}
+.ReserveNow h2 {
+  margin-left: 5px;
+  padding: 5px;
+}
+.button button {
+  margin-right: 5px;
+  width: 230px;
+  height: 60px;
+  align-items: end;
+  color: white;
+  background-color: #24a0ed;
+  border-radius: 5px;
+  border: none;
+  font-size: large;
+  font-weight: bolder;
+}
+
+.Breadcrumb {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}

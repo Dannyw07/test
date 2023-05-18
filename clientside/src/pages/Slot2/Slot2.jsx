@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
-import "./TeeTime.css";
+import "./slot2.css";
 import {
   faCalendarDays,
   faGolfBallTee,
@@ -19,8 +19,7 @@ import Looks4Icon from "@mui/icons-material/Looks4";
 import { color } from "framer-motion";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
-
-const TeeTime = () => {
+const Slot2 = () => {
   const [value, setValue] = React.useState(4);
   const [alignment, setAlignment] = React.useState("left");
 
@@ -46,9 +45,9 @@ const TeeTime = () => {
               <Link
                 underline="hover"
                 color="inherit"
-                href="/availableTime/slot-1"
+                href="/availableTime/slot-2"
               >
-                08:00AM
+                10:00AM
               </Link>
             </Breadcrumbs>
             {/* </div> */}
@@ -78,7 +77,7 @@ const TeeTime = () => {
           <div className="TeeTimes">
             <div className="FormDate">
               <p>
-                Date <FontAwesomeIcon icon={faCalendarDays} /> 08:00 AM
+                Date <FontAwesomeIcon icon={faCalendarDays} /> 10:00 AM
               </p>
             </div>
             <p>|</p>
@@ -159,5 +158,4 @@ const TeeTime = () => {
     </div>
   );
 };
-
-export default TeeTime;
+export default Slot2;

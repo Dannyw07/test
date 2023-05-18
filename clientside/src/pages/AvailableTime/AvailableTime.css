@@ -62,6 +62,13 @@ td {
   color: white;
   border-radius: 4px;
 }
+.status3 {
+  margin-top: 4px;
+  padding: 1px;
+  background: red;
+  color: white;
+  border-radius: 4px;
+}
 
 /* .availabletimeSlots {
   border: #fb8c00;
@@ -77,6 +84,17 @@ td {
   border: #fb8c00;
   border-style: solid;
   cursor: pointer;
+}
+.slot-2 {
+  background: white;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  border: #fb8c00;
+  border-style: solid;
+  cursor: pointer;
+  pointer-events: none;
 }
 
 .slotOneContent {
