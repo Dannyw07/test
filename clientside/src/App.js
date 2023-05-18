@@ -12,6 +12,7 @@ import MyAccount from "./pages/MyAccount/MyAccount";
 import { AnimatePresence } from "framer-motion";
 import Blog from "./pages/News/Blog";
 import CreateItem from "./pages/CreateItem/CreateItem";
+import TeeTime from "./pages/Teetime/TeeTime";
 
 function App() {
   // const navigate = useNavigate();
@@ -32,6 +33,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/availableTime" element={<AvailableTime />} />
             <Route path="/MyAccount" element={<MyAccount />} />
+            <Route path="/availableTime/slot-1" element={<TeeTime />} />
             <Route path="/createItem" element={<CreateItem />} />
           </Routes>
         </BrowserRouter>

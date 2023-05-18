@@ -112,7 +112,7 @@ function Navbar() {
                   </p>
                 )}
 
-                <p className="menuList">
+                <p className="menuList" onClick={logout}>
                   Logout
                   <FontAwesomeIcon
                     icon={faRightFromBracket}

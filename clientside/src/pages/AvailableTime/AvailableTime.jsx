@@ -7,6 +7,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Footer from "../../components/Footer/Footer";
 import { faFire } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom/dist/umd/react-router-dom.development";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -23,6 +24,10 @@ function handleClick(event) {
 // ];
 
 const AvailableTime = () => {
+  const navigate = useNavigate();
+  const handleSelect = () => {
+    navigate("/availableTime/slot-1");
+  };
   return (
     <div className="ATimeContainer">
       <Navbar />
@@ -106,7 +111,7 @@ const AvailableTime = () => {
           </div>
         </div> */}
 
-        <div className="slot-1">
+        <div className="slot-1" onClick={handleSelect}>
           <div className=" justify-content-center ">
             <div className="hotdeals">
               <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
