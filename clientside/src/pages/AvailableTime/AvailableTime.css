@@ -11,11 +11,75 @@ th {
 td {
   text-align: center;
 }
-
+.ATimeContainer {
+  background: #eeeeee;
+}
 .Time {
   width: 100%;
   /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.AtimeContent {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  background-color: #fb8c00;
+  color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+  gap: 5px;
+  padding-left: 10px;
+}
+
+.hotdeals {
+  /* margin-top: 5px; */
+  display: flex;
+  background-color: #fb8c00;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.time {
+  color: white;
+}
+
+.AtimeStatus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.status2 {
+  margin-top: 4px;
+  padding: 1px;
+  background: #43a047;
+  color: white;
+  border-radius: 4px;
+}
+
+/* .availabletimeSlots {
+  border: #fb8c00;
+  border-style: solid;
+} */
+
+.slot-1 {
+  background: white;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  border: #fb8c00;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.slotOneContent {
+  font-style: italic;
+  color: grey;
 }

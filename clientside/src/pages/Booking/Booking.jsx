@@ -13,6 +13,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import Footer from "../../components/Footer/Footer";
 import { useNavigate } from "react-router-dom/dist/umd/react-router-dom.development";
+import Image from "react-bootstrap/esm/Image";
 
 const Booking = () => {
   const [hole, setHole] = React.useState("");
@@ -38,8 +39,17 @@ const Booking = () => {
   return (
     <div style={{ height: "100%" }}>
       <Navbar />
-      <div className="mt-5 p-5">
-        <h1 className="text-start px-2 ">Hello this is Booking page</h1>
+      <div>
+        <Image
+          src="https://image.deemples.com/wp-content/uploads/2018/06/tourism-malaysia.jpg"
+          width="90%"
+          height="500px"
+          alt="description of the image"
+        />
+      </div>
+
+      <div className="p-5">
+        {/* <h1 className="text-start px-2 ">Hello this is Booking page</h1> */}
 
         <div
           className="headerSearch sticky "
@@ -135,10 +145,6 @@ const Booking = () => {
           </h4>
         </div>
       </div>
-
-      <h1>test</h1>
-      <h1>test</h1>
-      <h1>test</h1>
 
       <div className=" m-4 p-5 bg-dark d-flex justify-content-center align-items-center ">
         <h2 className="text-start m-5 text-center" style={{ color: "white" }}>

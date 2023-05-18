@@ -5,6 +5,8 @@ import Link from "@mui/material/Link";
 import "./AvailableTime.css";
 import Checkbox from "@mui/material/Checkbox";
 import Footer from "../../components/Footer/Footer";
+import { faFire } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -22,7 +24,7 @@ function handleClick(event) {
 
 const AvailableTime = () => {
   return (
-    <div>
+    <div className="ATimeContainer">
       <Navbar />
       <h1>Available Timeslot</h1>
       <div className="breadcrumb m-3">
@@ -56,15 +58,85 @@ const AvailableTime = () => {
           })}
         </table>
       </div> */}
-      <div className="availabletimeSlots col-md m-5">
-        <div
+
+      <div className="AtimeContent">
+        <FontAwesomeIcon
+          icon={faFire}
+          style={{ color: "#f8f9fc", fontSize: "40px" }}
+        />
+        <h1>Hot Deals Today</h1>
+      </div>
+      <div className="availabletimeSlots col-md m-5 d-flex gap-5">
+        {/* <div
           className="bg-secondary bg-gradient rounded "
-          style={{ width: "250px", height: "200px" }}
+          style={{ width: "250px", height: "175px" }}
         >
-          <div className="m-2 justify-content-center">
-            <h1>08:00 AM</h1>
-            <h3>1-2 Players</h3>
-            <h3>11 Holes</h3>
+          <div className="slot-1">
+            <div className=" justify-content-center ">
+              <div className="hotdeals">
+                <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
+                <h2 className="time">08:00 AM</h2>
+              </div>
+              <div className="slotOneContent">
+                <h3>1-2 Players</h3>
+                <h3>11 Holes</h3>
+              </div>
+              <div className="AtimeStatus">
+                <h3>Status:</h3>
+                <h5 className="status2"> Available</h5>
+              </div>
+            </div>
+          </div>
+
+          <div className="slot-1">
+            <div className=" justify-content-center ">
+              <div className="hotdeals">
+                <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
+                <h2 className="time">08:00 AM</h2>
+              </div>
+              <div className="slotOneContent">
+                <h3>1-2 Players</h3>
+                <h3>11 Holes</h3>
+              </div>
+              <div className="AtimeStatus">
+                <h3>Status:</h3>
+                <h5 className="status2"> Available</h5>
+              </div>
+            </div>
+          </div>
+        </div> */}
+
+        <div className="slot-1">
+          <div className=" justify-content-center ">
+            <div className="hotdeals">
+              <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
+              <h2 className="time">08:00 AM</h2>
+            </div>
+            <div className="slotOneContent">
+              <h3>1-2 Players</h3>
+              <h3>11 Holes</h3>
+            </div>
+            <div className="AtimeStatus">
+              <h3>Status:</h3>
+              <h5 className="status2"> Available</h5>
+            </div>
+          </div>
+        </div>
+
+        <div className="slot-1">
+          <div className=" justify-content-center ">
+            <div className="hotdeals">
+              <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
+              <h2 className="time">10:00 AM</h2>
+            </div>
+            <div className="slotOneContent">
+              <h3>1-4 Players</h3>
+              <h3>11 Holes</h3>
+            </div>
+            <div className="AtimeStatus">
+              <h3>Status:</h3>
+              <h5 className="status2"> Available</h5>
+            </div>
           </div>
         </div>
       </div>
