@@ -19,6 +19,8 @@ import LooksTwoIcon from "@mui/icons-material/LooksTwo";
 import Looks3Icon from "@mui/icons-material/Looks3";
 import Looks4Icon from "@mui/icons-material/Looks4";
 import { color } from "framer-motion";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Link from "@mui/material/Link";
 
 const TeeTime = () => {
   const [value, setValue] = React.useState(4);
@@ -33,6 +35,27 @@ const TeeTime = () => {
       <Navbar />
       <div className="TeetimeContainer">
         <h1>Tee Time</h1>
+        <div className="Breadcrumb">
+          <div className="breadcrumb m-3">
+            {/* <div role="presentation" onClick={handleClick}> */}
+            <Breadcrumbs aria-label="breadcrumb">
+              <Link underline="hover" color="inherit" href="/booking">
+                Booking
+              </Link>
+              <Link underline="hover" color="inherit" href="/availableTime">
+                Available Time
+              </Link>
+              <Link
+                underline="hover"
+                color="inherit"
+                href="/availableTime/slot-1"
+              >
+                08:00AM
+              </Link>
+            </Breadcrumbs>
+            {/* </div> */}
+          </div>
+        </div>
 
         <div className="TeetimeForm">
           <div className="TeeTimeTitle">

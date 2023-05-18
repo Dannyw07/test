@@ -3,6 +3,8 @@ import Navbar from "../../components/Navbar/Navbar";
 import Carousell from "../../components/Carousel/Carousell";
 import Footer from "../../components/Footer/Footer";
 import MainContainer from "../../components/MainContainer/MainContainer";
+import PersonOne from "../../components/Images/PersonOne.png";
+import "./homepage.css";
 
 const Homepage = () => {
   return (
@@ -14,7 +16,22 @@ const Homepage = () => {
         <Carousell />
       </div>
 
-      <h1>Features</h1>
+      <div className="UpcomingEvent">
+        <div className="EventTitle">
+          <h1>Upcoming Event</h1>
+        </div>
+
+        <div className="Events">
+          <div className="eventOne">
+            <h4>Golf Competition</h4>
+            <img src={PersonOne} alt="Golfers" className="golfers" />
+          </div>
+          <div className="eventOne">
+            <h4>Golf Competition</h4>
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

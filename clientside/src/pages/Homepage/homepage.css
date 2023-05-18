@@ -1,0 +1,25 @@
+.UpcomingEvent {
+  margin: 10px;
+  background-color: grey;
+  height: 500px;
+  border-radius: 5px;
+}
+
+.EventTitle h1 {
+  text-align: left;
+  margin: 10px;
+  padding: 10px;
+}
+
+.Events {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.eventOne {
+  width: 300px;
+  height: 400px;
+
+  justify-content: space-evenly;
+  background-color: lightpink;
+}
