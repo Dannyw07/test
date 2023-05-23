@@ -4,6 +4,7 @@ import BackPic from "../../components/Images/pic3.jpeg";
 import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
 import "./review.css";
+import Avatar from "../../components/Images/avatar.png";
 
 export const Review = () => {
   return (
@@ -14,7 +15,6 @@ export const Review = () => {
           <img src={BackPic} alt="Golfers" className="mainPic" />
           <h2>Customer Review</h2>
         </div>
-
         <div className="reviewContent">
           <div className="ratingContent-1"></div>
           <div className="ratingContent-2">
@@ -31,8 +31,32 @@ export const Review = () => {
             </div>
           </div>
         </div>
-
+        <h4 className="reviewtext">See what other people are saying</h4>
+        <div className="Review">
+          <div className="reviewPart1">
+            <img src={Avatar} alt="userpic" className="userAvatar" />
+          </div>
+          <div className="reviewPart2">
+            <h5>Danny Wong Jia Hong</h5>
+            <Stack spacing={1}>
+              <Rating
+                name="half-rating-read"
+                defaultValue={4.0}
+                precision={0.5}
+                readOnly
+                size="small"
+              />
+            </Stack>
+            <h3>Title</h3>
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptate
+              accusantium doloremque laudantium.
+            </p>
+          </div>
+        </div>
+        <br />
         <div className="Review"></div>
+        <br />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../Navbar/navbar.css";
 import {
@@ -16,13 +16,22 @@ import { actionType } from "../../context/reducer";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
+import { useOnHoverOutside } from "../../hooks/useOnHoverOutside.js";
+import Menu from "../menu/menu";
+// import Menu from "../../components/menu";
 
 //import ReorderIcon from "@mui/icons-material/Reorder";
 
 function Navbar() {
+  const dropdownRef = useRef(null); // Create a reference for dropdown container
+  const [isMenuDropDownOpen, setMenuDropDownOpen] = useState(false);
+
+  // Function to close dropdown
+  const closeHoverMenu = () => {
+    setMenuDropDownOpen(false);
+  };
+
+  useOnHoverOutside(dropdownRef, closeHoverMenu); // Call the hook
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -94,6 +103,7 @@ function Navbar() {
         {/* <div className="links" id={showLinks ? "hidden" : ""}> */}
         <div className="links">
           <Link to="/">Home</Link>
+
           <Link to="/booking">Booking</Link>
           <Link to="/news">News</Link>
           <Link to="/contact">Contact</Link>
