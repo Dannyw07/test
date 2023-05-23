@@ -10,10 +10,14 @@ const schema = {
     length: { maximum: 128 },
   },
   email: {
-    presence: { allowEmpty: false, message: "is requried" },
+    presence: { allowEmpty: false, message: "is required" },
     email: true,
     length: { maximum: 300 },
   },
+  // message: {
+  //   presense: { allowEmpty: false, message: "is required" },
+  //   length: { maximum: 400 },
+  // },
 };
 
 const Contact = () => {
@@ -100,6 +104,22 @@ const Contact = () => {
                     value={formState.values.email || ""}
                   />
                 </Grid>
+                {/* <Grid item xs={12} sm={6}>
+                  <TextField
+                    placeholder="message"
+                    label="Message *"
+                    variant="outlined"
+                    size="medium"
+                    name="message"
+                    id="message"
+                    helperText={
+                      hasError("message") ? formState.errors.message[0] : null
+                    }
+                    error={hasError("message")}
+                    onChange={handleChange}
+                    value={formState.values.message || ""}
+                  />
+                </Grid> */}
                 <Button
                   size="large"
                   variant="contained"

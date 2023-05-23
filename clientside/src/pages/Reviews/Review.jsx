@@ -55,7 +55,51 @@ export const Review = () => {
           </div>
         </div>
         <br />
-        <div className="Review"></div>
+        <div className="Review">
+          <div className="reviewPart1">
+            <img src={Avatar} alt="userpic" className="userAvatar" />
+          </div>
+          <div className="reviewPart2">
+            <h5>Danny Wong Jia Hong</h5>
+            <Stack spacing={1}>
+              <Rating
+                name="half-rating-read"
+                defaultValue={4.5}
+                precision={0.5}
+                readOnly
+                size="small"
+              />
+            </Stack>
+            <h3>Title</h3>
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptate
+              accusantium doloremque laudantium.
+            </p>
+          </div>
+        </div>
+        <br />
+        <div className="Review">
+          <div className="reviewPart1">
+            <img src={Avatar} alt="userpic" className="userAvatar" />
+          </div>
+          <div className="reviewPart2">
+            <h5>Danny Wong Jia Hong</h5>
+            <Stack spacing={1}>
+              <Rating
+                name="half-rating-read"
+                defaultValue={2.0}
+                precision={0.5}
+                readOnly
+                size="small"
+              />
+            </Stack>
+            <h3>Title</h3>
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptate
+              accusantium doloremque laudantium.
+            </p>
+          </div>
+        </div>
         <br />
       </div>
     </div>
