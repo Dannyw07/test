@@ -86,7 +86,7 @@ const Slot2 = () => {
             </div>
             <div className="FormDate">
               <p>
-                <FontAwesomeIcon icon={faGolfBallTee} /> 11 Holes
+                <FontAwesomeIcon icon={faGolfBallTee} /> 18 Holes
               </p>
             </div>
           </div>

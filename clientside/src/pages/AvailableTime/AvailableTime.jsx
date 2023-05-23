@@ -254,7 +254,7 @@ const AvailableTime = () => {
             </div>
             <div className="slotOneContent">
               <h3>1-2 Players</h3>
-              <h3>11 Holes</h3>
+              <h3>18 Holes</h3>
             </div>
             <div className="AtimeStatus">
               <h3>Status:</h3>
@@ -271,7 +271,7 @@ const AvailableTime = () => {
             </div>
             <div className="slotOneContent">
               <h3>1-4 Players</h3>
-              <h3>11 Holes</h3>
+              <h3>9 Holes</h3>
             </div>
             <div className="AtimeStatus">
               <h3>Status:</h3>
@@ -288,7 +288,7 @@ const AvailableTime = () => {
             </div>
             <div className="slotOneContent">
               <h3>1-4 Players</h3>
-              <h3>11 Holes</h3>
+              <h3>9 Holes</h3>
             </div>
             <div className="AtimeStatus">
               <h3>Status:</h3>

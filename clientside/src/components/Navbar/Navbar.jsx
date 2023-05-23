@@ -16,12 +16,23 @@ import { actionType } from "../../context/reducer";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
 //import ReorderIcon from "@mui/icons-material/Reorder";
 
 function Navbar() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const navigate = useNavigate();
-  const [showLinks, setShowLinks] = useState(false);
+  // const [showLinks, setShowLinks] = useState(false);
   const firebaseAuth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
@@ -80,16 +91,14 @@ function Navbar() {
   return (
     <div className="Navbar">
       <div className="leftSide">
-        <div className="links" id={showLinks ? "hidden" : ""}>
+        {/* <div className="links" id={showLinks ? "hidden" : ""}> */}
+        <div className="links">
           <Link to="/">Home</Link>
           <Link to="/booking">Booking</Link>
           <Link to="/news">News</Link>
           <Link to="/contact">Contact</Link>
+          <Link to="/CustomerReview">Review</Link>
         </div>
-        <button onClick={() => setShowLinks(!showLinks)}>
-          {/* <ReorderIcon />*/}
-          Open
-        </button>
       </div>
       <div className="rightSide">
         <div className="links-2">
@@ -128,7 +137,7 @@ function Navbar() {
               >
                 {user && user.email === "bi19110060@student.ums.edu.my" && (
                   <p className="menuList" onClick={handleCreateItem}>
-                    New item
+                    Create New Tee-time
                     <FontAwesomeIcon
                       icon={faPlus}
                       style={{ color: "#ffffff" }}
