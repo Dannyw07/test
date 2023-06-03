@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import { Typography, Grid, Button, TextField } from "@mui/material";
 import validate from "validate.js";
 import emailjs from "emailjs-com";
+import "./contact.css";
 
 const schema = {
   name: {
@@ -63,74 +64,36 @@ const Contact = () => {
       <Navbar />
       <div className="content">
         <div className="container">
-          <div>
-            <form headers="application/json" name="contact-form">
-              <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <Typography variant="h4" align="center">
-                    <strong>Contact Form</strong>
-                  </Typography>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    placeholder="Name"
-                    label="Name *"
-                    variant="outlined"
-                    size="medium"
-                    name="name"
-                    id="name"
-                    // value={formState.values.name}
-                    helperText={
-                      hasError("name") ? formState.errors.name[0] : null
-                    }
-                    error={hasError("name")}
-                    onChange={handleChange}
-                    value={formState.values.name || ""}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    placeholder="E-mail"
-                    label="E-mail *"
-                    variant="outlined"
-                    size="medium"
-                    name="email"
-                    id="email"
-                    helperText={
-                      hasError("email") ? formState.errors.email[0] : null
-                    }
-                    error={hasError("email")}
-                    onChange={handleChange}
-                    value={formState.values.email || ""}
-                  />
-                </Grid>
-                {/* <Grid item xs={12} sm={6}>
-                  <TextField
-                    placeholder="message"
-                    label="Message *"
-                    variant="outlined"
-                    size="medium"
-                    name="message"
-                    id="message"
-                    helperText={
-                      hasError("message") ? formState.errors.message[0] : null
-                    }
-                    error={hasError("message")}
-                    onChange={handleChange}
-                    value={formState.values.message || ""}
-                  />
-                </Grid> */}
-                <Button
-                  size="large"
-                  variant="contained"
-                  type="submit"
-                  color="primary"
-                  disabled={!formState.isValid}
-                >
-                  Send
-                </Button>
-              </Grid>
-            </form>
+          <div className="Contactcontainer">
+            <div className="firstDiv">
+              <div className="fDTitle">
+                <h1>Contact Us</h1>
+              </div>
+
+              <div className="fDcontent">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
+                  quaerat autem corrupti asperiores accusantium et fuga! Facere
+                  except uri, quo eos, nobis doloremque dolor labore expedita
+                  illum iusto, aut repellat fuga!
+                </p>
+              </div>
+            </div>
+            <div className="secondDiv">
+              <div className="userNameInput">
+                <h4>Name</h4>
+                <input type="text" id="fname" name="fname" />
+              </div>
+              <div className="userEmailInput">
+                <h4>Email</h4>
+                <input type="text" id="email" name="email" />
+              </div>
+              <div className="userTextInput">
+                <h4>Message</h4>
+                <textarea />
+              </div>
+              <button>Send Message</button>
+            </div>
           </div>
         </div>
       </div>
