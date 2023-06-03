@@ -4,6 +4,13 @@ import { Typography, Grid, Button, TextField } from "@mui/material";
 import validate from "validate.js";
 import emailjs from "emailjs-com";
 import "./contact.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {
+  faLocationDot,
+  faPhone,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
 const schema = {
   name: {
@@ -60,7 +67,7 @@ const Contact = () => {
     formState.touched[field] && formState.errors[field] ? true : false;
 
   return (
-    <div>
+    <div className="Contents">
       <Navbar />
       <div className="content">
         <div className="container">
@@ -78,7 +85,22 @@ const Contact = () => {
                   illum iusto, aut repellat fuga!
                 </p>
               </div>
+              <div className="fDInfo">
+                <div className="fDlocation">
+                  <FontAwesomeIcon icon={faLocationDot} />
+                  <p>Jalan Aru,88807, Kota Kinabalu(Sabah)</p>
+                </div>
+                <div className="fDphone">
+                  <FontAwesomeIcon icon={faPhone} />
+                  <p>1-800-222-4545</p>
+                </div>
+                <div className="fDemail">
+                  <FontAwesomeIcon icon={faEnvelope} />
+                  <p>kgc@gmail.com</p>
+                </div>
+              </div>
             </div>
+
             <div className="secondDiv">
               <div className="userNameInput">
                 <h4>Name</h4>

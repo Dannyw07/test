@@ -1,29 +1,35 @@
+.Contents {
+  width: auto;
+  height: auto;
+}
 .Contactcontainer {
   display: flex;
 }
 
 .firstDiv {
-  width: 550px;
+  width: 600px;
   height: 500px;
-  background-color: lightgray;
   margin: 5px;
   padding: 10px;
 }
 
 .fDTitle h1 {
   font-weight: bolder;
+  font-size: 70px;
 }
 .fDcontent {
   margin-top: 40px;
+  margin-right: 20px;
+  padding-right: 35px;
   text-align: justify;
 }
 
 .secondDiv {
-  width: 550px;
+  width: 516px;
   height: 500px;
   margin: 5px;
   padding: 10px;
-  background-color: lightcoral;
+  gap: 5px;
 }
 
 textarea {
@@ -42,4 +48,21 @@ button {
   background: #007bff;
   color: white;
   border: none;
+}
+.fDInfo {
+  align-items: center;
+  margin: 60px;
+  padding: 20px;
+}
+.fDlocation {
+  gap: 5px;
+  display: flex;
+}
+.fDphone {
+  gap: 5px;
+  display: flex;
+}
+.fDemail {
+  gap: 5px;
+  display: flex;
 }
