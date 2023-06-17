@@ -4,17 +4,21 @@ import Homepage from "./pages/Homepage/Homepage";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Booking from "./pages/Booking/Booking";
-import News from "./pages/News/News";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./pages/Contact/Contact";
 import AvailableTime from "./pages/AvailableTime/AvailableTime";
 import MyAccount from "./pages/MyAccount/MyAccount";
 import { AnimatePresence } from "framer-motion";
-import Blog from "./pages/News/Blog";
+
 import CreateItem from "./pages/CreateItem/CreateItem";
 import TeeTime from "./pages/Teetime/TeeTime";
 import Slot2 from "./pages/Slot2/Slot2";
 import { Review } from "./pages/Reviews/Review";
+import Gallery from "./pages/Gallery/Gallery";
+import News from "./pages/News/News";
+import Blog from "./pages/Blog/Blog";
+import Single from "./pages/Single/Single";
 
 function App() {
   // const navigate = useNavigate();
@@ -22,6 +26,7 @@ function App() {
   // const navigateToContacts = () => {
   //   navigate("/contact");
   // };
+
   return (
     <AnimatePresence>
       <div className="App">
@@ -29,7 +34,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/booking" element={<Booking />} />
+            {/* <Route path="/news" element={<News />} /> */}
             <Route path="/news" element={<Blog />} />
+            <Route path="/blog1" element={<Single />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/contact" element={<Contact />} />
@@ -39,6 +46,7 @@ function App() {
             <Route path="/availableTime/slot-2" element={<Slot2 />} />
             <Route path="/createItem" element={<CreateItem />} />
             <Route path="/CustomerReview" element={<Review />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Routes>
         </BrowserRouter>
       </div>

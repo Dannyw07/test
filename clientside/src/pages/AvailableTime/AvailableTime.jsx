@@ -17,6 +17,8 @@ import Select from "@mui/material/Select";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -52,6 +54,26 @@ const AvailableTime = () => {
 
   const handleSearch = () => {
     navigate("/availableTime");
+  };
+
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
   };
   return (
     <div className="ATimeContainer">
@@ -245,56 +267,129 @@ const AvailableTime = () => {
             </div>
           </div>
         </div> */}
-
-        <div className="slot-1" onClick={handleSelect}>
-          <div className=" justify-content-center ">
-            <div className="hotdeals">
-              <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
-              <h2 className="time">08:00 AM</h2>
+        ;
+        <div className="GalContainer">
+          <Carousel
+            responsive={responsive}
+            centerMode={true}
+            autoPlay={true}
+            autoPlaySpeed={5000}
+            rewind={true}
+            rewindWithAnimation={true}
+          >
+            <div className="slot-1">
+              <div className=" justify-content-center ">
+                <div className="hotdeals">
+                  <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
+                  <h2 className="time">08:00 AM</h2>
+                </div>
+                <div className="slotOneContent">
+                  <h3>1-2 Players</h3>
+                  <h3>18 Holes</h3>
+                </div>
+                <div className="AtimeStatus">
+                  <h3>Status:</h3>
+                  <h5 className="status2"> Available</h5>
+                </div>
+              </div>
             </div>
-            <div className="slotOneContent">
-              <h3>1-2 Players</h3>
-              <h3>18 Holes</h3>
+            <div className="slot-1">
+              <div className=" justify-content-center ">
+                <div className="hotdeals">
+                  <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
+                  <h2 className="time">08:00 AM</h2>
+                </div>
+                <div className="slotOneContent">
+                  <h3>1-2 Players</h3>
+                  <h3>18 Holes</h3>
+                </div>
+                <div className="AtimeStatus">
+                  <h3>Status:</h3>
+                  <h5 className="status2"> Available</h5>
+                </div>
+              </div>
             </div>
-            <div className="AtimeStatus">
-              <h3>Status:</h3>
-              <h5 className="status2"> Available</h5>
+            <div className="slot-1">
+              <div className=" justify-content-center ">
+                <div className="hotdeals">
+                  <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
+                  <h2 className="time">08:00 AM</h2>
+                </div>
+                <div className="slotOneContent">
+                  <h3>1-2 Players</h3>
+                  <h3>18 Holes</h3>
+                </div>
+                <div className="AtimeStatus">
+                  <h3>Status:</h3>
+                  <h5 className="status2"> Available</h5>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div className="slot-2">
-          <div className=" justify-content-center ">
-            <div className="hotdeals">
-              <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
-              <h2 className="time">9:45 AM</h2>
+            <div className="slot-1">
+              <div className=" justify-content-center ">
+                <div className="hotdeals">
+                  <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
+                  <h2 className="time">08:00 AM</h2>
+                </div>
+                <div className="slotOneContent">
+                  <h3>1-2 Players</h3>
+                  <h3>18 Holes</h3>
+                </div>
+                <div className="AtimeStatus">
+                  <h3>Status:</h3>
+                  <h5 className="status2"> Available</h5>
+                </div>
+              </div>
             </div>
-            <div className="slotOneContent">
-              <h3>1-4 Players</h3>
-              <h3>9 Holes</h3>
+            <div className="slot-1">
+              <div className=" justify-content-center ">
+                <div className="hotdeals">
+                  <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
+                  <h2 className="time">08:00 AM</h2>
+                </div>
+                <div className="slotOneContent">
+                  <h3>1-2 Players</h3>
+                  <h3>18 Holes</h3>
+                </div>
+                <div className="AtimeStatus">
+                  <h3>Status:</h3>
+                  <h5 className="status2"> Available</h5>
+                </div>
+              </div>
             </div>
-            <div className="AtimeStatus">
-              <h3>Status:</h3>
-              <h5 className="status3"> Closed</h5>
+            <div className="slot-1">
+              <div className=" justify-content-center ">
+                <div className="hotdeals">
+                  <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
+                  <h2 className="time">08:00 AM</h2>
+                </div>
+                <div className="slotOneContent">
+                  <h3>1-2 Players</h3>
+                  <h3>18 Holes</h3>
+                </div>
+                <div className="AtimeStatus">
+                  <h3>Status:</h3>
+                  <h5 className="status2"> Available</h5>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div className="slot-1" onClick={handleSelect2}>
-          <div className=" justify-content-center ">
-            <div className="hotdeals">
-              <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
-              <h2 className="time">10:00 AM</h2>
+            <div className="slot-1">
+              <div className=" justify-content-center ">
+                <div className="hotdeals">
+                  <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
+                  <h2 className="time">08:00 AM</h2>
+                </div>
+                <div className="slotOneContent">
+                  <h3>1-2 Players</h3>
+                  <h3>18 Holes</h3>
+                </div>
+                <div className="AtimeStatus">
+                  <h3>Status:</h3>
+                  <h5 className="status2"> Available</h5>
+                </div>
+              </div>
             </div>
-            <div className="slotOneContent">
-              <h3>1-4 Players</h3>
-              <h3>9 Holes</h3>
-            </div>
-            <div className="AtimeStatus">
-              <h3>Status:</h3>
-              <h5 className="status2"> Available</h5>
-            </div>
-          </div>
+          </Carousel>
         </div>
       </div>
       <Footer />

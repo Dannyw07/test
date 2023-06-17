@@ -1,11 +1,21 @@
-// const express = require("express");
-// const mysql = require("mysql");
-// const cors = require("cors");
+const express = require("express");
+const mysql = require("mysql");
+const cors = require("cors");
 
-// const app = express();
+const app = express();
 
-// app.use(express.json());
-// app.use(cors());
+app.use(express.json());
+app.use(cors());
+
+//***********SEND API */
+app.post("/send", async (req, res) => {
+  try {
+    const { fullName, email, message } = req.body;
+    res.json({ msg: "server" });
+  } catch (error) {
+    res.status(404).json({ msg: "Error " });
+  }
+});
 
 // const db = mysql.createConnection({
 //   user: "root",
@@ -48,6 +58,6 @@
 //   );
 // });
 
-// app.listen(3001, () => {
-//   console.log("running on port 3001, lets get this fyp2 done! ");
-// });
+app.listen(3001, () => {
+  console.log("running on port 3001, lets get this fyp2 done! ");
+});

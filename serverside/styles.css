@@ -1,0 +1,35 @@
+body {
+  background-color: #d3d3d3;
+  width: 1280px;
+  height: 720px;
+}
+
+p {
+  color: red;
+}
+
+.emailDiv {
+  width: 500px;
+  height: 280px;
+  background: #021e39;
+  border-radius: 50px;
+  margin: auto;
+}
+
+.emailTitle {
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.emailContent {
+  background-color: white;
+  width: 500px;
+  height: 280px;
+  border-radius: 0px 0px 50px 50px;
+}
+
+.contents {
+  padding: 10px;
+  margin: 10px;
+}

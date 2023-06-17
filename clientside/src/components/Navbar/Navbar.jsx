@@ -108,6 +108,7 @@ function Navbar() {
           <Link to="/news">News</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/CustomerReview">Review</Link>
+          <Link to="/gallery">Gallery</Link>
         </div>
       </div>
       <div className="rightSide">
@@ -136,7 +137,6 @@ function Navbar() {
               onClick={login}
             />
             <ToastContainer />
-            {/* <h6 className="name">{user ? user.displayName : null}</h6> */}
 
             {isMenu && (
               <motion.div
