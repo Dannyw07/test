@@ -6,7 +6,7 @@
 .personalInfo {
   position: absolute;
   width: 963px;
-  height: 1200px;
+  height: 1080px;
   left: 22px;
   margin-top: 30px;
   background: #d9d9d9;
@@ -89,21 +89,127 @@ textarea.usersMessage {
 }
 
 .confirmationButton {
-  background-color: red;
+  /* background-color: red; */
   position: absolute;
   top: 1010px;
   width: 963px;
   height: 50px;
 }
 .cButtons {
+  /* background-color: blue; */
+  width: 850px;
+  height: 50px;
+  /* margin: 20px; */
   margin-left: auto;
   margin-right: auto;
 }
 
 .cButton {
   display: flex;
-  gap: 10px;
-  background-color: blue;
-  width: 481.5px;
+}
+.cancelButton {
+  /* background-color: white; */
+  width: 425px;
   height: 50px;
+}
+
+.proceedButton {
+  /* background-color: black; */
+  width: 425px;
+  height: 50px;
+}
+
+.cancelButton {
+  display: flex;
+  justify-content: left;
+}
+button.redButton {
+  background-color: white;
+  margin-top: 0px;
+  width: 150px;
+  height: 50px;
+  color: red;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+button.redButton:hover {
+  background-color: red;
+  margin-top: 0px;
+  width: 150px;
+  height: 50px;
+  color: white;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+
+.proceedButton {
+  display: flex;
+  justify-content: right;
+}
+
+button.blueButton {
+  background-color: #228b22;
+  margin-top: 0px;
+  width: 150px;
+  height: 50px;
+  color: white;
+  border: 2px solid #228b22;
+  border-radius: 4px;
+}
+
+.gCinfos {
+  position: absolute;
+  width: 307px;
+  height: 1030px;
+  left: 1018px;
+  /* top: 30px; */
+  margin-top: 30px;
+  background: white;
+  border-radius: 5px;
+  border: 2px solid lightgoldenrodyellow;
+}
+
+.gcImages {
+  margin-top: 10px;
+  width: 280px;
+  height: 230px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.webLink p {
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+button.emLink {
+  margin-top: 0px;
+  width: 280px;
+  height: 50px;
+  border-radius: 4px;
+}
+a {
+  text-decoration: none;
+}
+.gcAbout {
+  margin: 10px;
+  width: 280px;
+  height: 390px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+.gcText p {
+  font-size: 13px;
+  line-height: normal;
+  font-weight: bold;
+}
+
+button.emLinks {
+  margin-top: 10px;
+  width: 280px;
+  height: 50px;
+  border-radius: 4px;
 }

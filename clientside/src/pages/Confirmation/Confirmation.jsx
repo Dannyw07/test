@@ -4,6 +4,9 @@ import Navbar from "../../components/Navbar/Navbar";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import Logo from "../../components/Images/kinabaluGClogo.png";
+import { faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Confirmation = () => {
   return (
@@ -85,13 +88,62 @@ const Confirmation = () => {
           <div className="cButtons">
             <div className="cButton">
               <div className="cancelButton">
-                <button>Cancel</button>
+                <button className="redButton">Cancel</button>
               </div>
-              <div className="cancelButton">
-                <button>Proceed</button>
+              <div className="proceedButton">
+                <button className="blueButton">Proceed</button>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="gCinfos">
+        <div className="gcImages">
+          <img src={Logo} alt="The Kinabalu GolfClub logo" />
+        </div>
+        <div className="webLink">
+          {/* <p>www.kgcsabah.org</p> */}
+          <a href="https://www.kgcsabah.org/">www.kgcsabah.org</a>
+          <button className="emLink">
+            <FontAwesomeIcon icon={faEnvelope} className="envelope" />
+            &nbsp; EMAIL US
+          </button>
+        </div>
+
+        <div className="gcAbout">
+          <div className="gcText">
+            <p>
+              The club currently has a 11 holes golf course spreading over a
+              predominantly flat and gentle land of about 40 acres. The Course
+              rating is 68.5 and slope rating of 135. The course contains 6 par
+              4s, 4 par 3s and 1 par 5 which are lined with corridor-type
+              fairways combined with fast and sloping greens which are guarded
+              by numerous bunkers and some subtle water hazards.
+              <br />
+              <br />
+              Visitors are allowed to play during the weekdays provided they pay
+              the prevailing Green and caddy fees and have a valid USGA Handicap
+              Index of 24 & below for Men and 30 & below for ladies. A golfers’
+              insurance is mandatory for all golfers.
+              <br />
+              <br />
+              The golf course is served by a Golfer’s Lounge where Golfers and
+              non-golfers gather together for relaxation and refreshments. A
+              pro-shop outlet can be found in the Golfer’s Lounge.
+            </p>
+          </div>
+        </div>
+        <div className="gcImages">
+          <img src={Logo} alt="The Kinabalu GolfClub logo" />
+        </div>
+        <div className="webLink">
+          {/* <p>www.kgcsabah.org</p> */}
+          {/* <a href="https://www.kgcsabah.org/">www.kgcsabah.org</a> */}
+          <button className="emLinks">
+            <FontAwesomeIcon icon={faLocationDot} />
+            &nbsp; GET DIRECTIONS
+          </button>
         </div>
       </div>
     </div>
