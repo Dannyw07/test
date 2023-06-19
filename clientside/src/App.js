@@ -19,6 +19,7 @@ import Gallery from "./pages/Gallery/Gallery";
 import News from "./pages/News/News";
 import Blog from "./pages/Blog/Blog";
 import Single from "./pages/Single/Single";
+import Confirmation from "./pages/Confirmation/Confirmation";
 
 function App() {
   // const navigate = useNavigate();
@@ -47,6 +48,7 @@ function App() {
             <Route path="/createItem" element={<CreateItem />} />
             <Route path="/CustomerReview" element={<Review />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/confirm" element={<Confirmation />} />
           </Routes>
         </BrowserRouter>
       </div>

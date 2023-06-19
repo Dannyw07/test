@@ -10,6 +10,12 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import Box from "@mui/material/Box";
+import Slider from "@mui/material/Slider";
+
+function valuetext(value) {
+  return `${value}°C`;
+}
 
 const teetime = [
   {
@@ -34,36 +40,42 @@ const teetime = [
 
 const hotDeals = [
   {
+    no: 1,
     hdTime: "08:00",
     noPlayer: "1-2 players",
     noHoles: 18,
     status: "Available",
   },
   {
+    no: 2,
     hdTime: "08:15",
     noPlayer: "1-4 players",
     noHoles: 9,
     status: "Available",
   },
   {
+    no: 3,
     hdTime: "08:30",
     noPlayer: "1-2 players",
     noHoles: 18,
     status: "Available",
   },
   {
+    no: 4,
     hdTime: "08:45",
     noPlayer: "1-2 players",
     noHoles: 9,
     status: "Available",
   },
   {
+    no: 5,
     hdTime: "09:00",
     noPlayer: "1-2 players",
     noHoles: 9,
     status: "Available",
   },
   {
+    no: 6,
     hdTime: "09:15",
     noPlayer: "1-2 players",
     noHoles: 9,
@@ -71,6 +83,11 @@ const hotDeals = [
   },
 ];
 const Gallery = () => {
+  const [value, setValue] = React.useState([20, 37]);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -141,7 +158,21 @@ const Gallery = () => {
               <DatePicker />
             </LocalizationProvider>
           </div>
-          <div className="divDate">{/* <div className="tarikh"></div> */}</div>
+          <div className="divDates">
+            <div className="divInfo">
+              <div className="tarikh-1">Time</div>
+              <div className="tarikh-2">07:00 - 20:00</div>
+            </div>
+            <Box sx={{ width: 406 }}>
+              <Slider
+                getAriaLabel={() => "Temperature range"}
+                value={value}
+                onChange={handleChange}
+                valueLabelDisplay="auto"
+                getAriaValueText={valuetext}
+              />
+            </Box>
+          </div>
 
           <div className="divSelect">
             <div className="divOne">

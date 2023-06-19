@@ -1,0 +1,109 @@
+.confirmation {
+  width: 1349px;
+  height: 720px;
+}
+
+.personalInfo {
+  position: absolute;
+  width: 963px;
+  height: 1200px;
+  left: 22px;
+  margin-top: 30px;
+  background: #d9d9d9;
+  border-radius: 5px;
+}
+
+.timer p {
+  margin: 20px;
+  font-weight: bold;
+  color: red;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+}
+
+.pInfo {
+  position: absolute;
+  left: 37px;
+  width: 481.5px;
+}
+.pInfoTitle {
+  margin-left: 0xp;
+  margin-right: 0px;
+}
+
+.pInfoTitle h1 {
+  font-size: xx-large;
+  margin-bottom: 10px;
+}
+.pInfoTitle h5 {
+  text-align: left;
+}
+.userpDetails p {
+  margin-bottom: 0px;
+}
+
+.userFName {
+  width: 400px;
+  height: 75px;
+}
+
+input.usersFN {
+  width: 400px;
+  height: 40px;
+}
+
+.userMessageDetails {
+  height: 481.5px;
+  height: 180px;
+}
+textarea.usersMessage {
+  width: 481.5px;
+  height: 140px;
+}
+
+.bookingDetails {
+  position: absolute;
+  top: 650px;
+  width: 963px;
+  height: 340px;
+  /* background-color: beige; */
+}
+.bdetails {
+  margin: 37px;
+}
+.bookingDetailsTitle {
+}
+
+.bookingDetailsTitle h1 {
+  font-size: x-large;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.bookingTable {
+  width: 481.5px;
+  height: 200px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+.confirmationButton {
+  background-color: red;
+  position: absolute;
+  top: 1010px;
+  width: 963px;
+  height: 50px;
+}
+.cButtons {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cButton {
+  display: flex;
+  gap: 10px;
+  background-color: blue;
+  width: 481.5px;
+  height: 50px;
+}

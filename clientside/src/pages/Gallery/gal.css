@@ -184,9 +184,28 @@ li.react-multi-carousel-item--active {
   margin-left: auto;
   margin-right: auto;
 }
-
-.tarikh {
+.divDates {
+  background-color: white;
+  width: 406px;
+  height: 42px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
+.divInfo {
+  display: flex;
+}
+.tarikh-1 {
+  text-align: left;
+  width: 203px;
+  height: 21px;
+}
+.tarikh-2 {
+  text-align: end;
+  width: 203px;
+  height: 21px;
+}
+
 .divSelect {
   display: flex;
 }
@@ -244,7 +263,12 @@ button.refreshTeeTime {
   margin-right: auto;
   font-weight: bold;
 }
-
+.uiBox-root {
+  width: 406px;
+}
+.MuiSlider-root {
+  height: 6px;
+}
 .rightNav {
   position: absolute;
   background-color: white;
