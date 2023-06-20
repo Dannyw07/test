@@ -20,6 +20,8 @@ import News from "./pages/News/News";
 import Blog from "./pages/Blog/Blog";
 import Single from "./pages/Single/Single";
 import Confirmation from "./pages/Confirmation/Confirmation";
+import ReviewV2 from "./pages/ReviewV2/ReviewV2";
+import FooterV2 from "./components/Footerv2/FooterV2";
 
 function App() {
   // const navigate = useNavigate();
@@ -49,6 +51,8 @@ function App() {
             <Route path="/CustomerReview" element={<Review />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/confirm" element={<Confirmation />} />
+            <Route path="/review" element={<ReviewV2 />} />
+            <Route path="/footerv2" element={<FooterV2 />} />
           </Routes>
         </BrowserRouter>
       </div>

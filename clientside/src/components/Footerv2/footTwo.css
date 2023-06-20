@@ -1,0 +1,78 @@
+.footTwos {
+  background-color: blue;
+  width: 1349px;
+  height: 200px;
+}
+
+.footerContainer {
+  width: 1349px;
+  height: 200px;
+}
+
+.footerContent {
+  position: absolute;
+  background-color: red;
+  width: 1325px;
+  height: 180px;
+  margin: 10px;
+  /* padding: 5px; */
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+.footerIndividual {
+  display: flex;
+}
+
+.footerAbout {
+  background-color: white;
+  width: 336.25px;
+  height: 180px;
+  /* padding: 10px; */
+  border: 1px solid grey;
+}
+
+.footerAbout2 {
+  background-color: white;
+  width: 336.25px;
+  height: 180px;
+}
+
+.footerAbout3 {
+  background-color: pink;
+  width: 336.25px;
+  height: 180px;
+  padding: 5px;
+}
+.footerAbout4 {
+  background-color: green;
+  width: 336.25px;
+  height: 180px;
+  padding: 5px;
+}
+
+.footerAboutContainer {
+  padding: 3px;
+  width: 240px;
+  height: 180px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footerAboutContainer h5 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.footerAboutContainer p {
+  line-height: normal;
+}
+
+.footerAboutInfo {
+  padding: 3px;
+  width: 240px;
+  height: 180px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}

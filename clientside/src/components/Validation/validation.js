@@ -22,5 +22,27 @@ const validateMessage = ({ message, setMessageError }) => {
     ? setMessageError("Message is too long")
     : setMessageError("");
 };
+//validate first name
+const validateFirstName = ({ firstName, setFirstNameError }) => {
+  return firstName && firstName.length < 5
+    ? setFirstNameError("First Name is too short")
+    : firstName && firstName.length > 50
+    ? setFirstNameError("First Name is too long")
+    : setFirstNameError("");
+};
+//validate last name
+const validateLastName = ({ lastName, setLastNameError }) => {
+  return lastName && lastName.length < 5
+    ? setLastNameError("Last Name is too short")
+    : lastName && lastName.length > 50
+    ? setLastNameError("Last Name is too long")
+    : setLastNameError("");
+};
 
-export { validateFullName, validateEmail, validateMessage };
+export {
+  validateFullName,
+  validateEmail,
+  validateMessage,
+  validateFirstName,
+  validateLastName,
+};

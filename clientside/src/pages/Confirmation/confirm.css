@@ -41,6 +41,7 @@
 }
 .userpDetails p {
   margin-bottom: 0px;
+  height: auto;
 }
 
 .userFName {
@@ -52,8 +53,7 @@ input.usersFN {
   width: 400px;
   height: 40px;
 }
-
-.userMessageDetails {
+\ .userMessageDetails {
   height: 481.5px;
   height: 180px;
 }

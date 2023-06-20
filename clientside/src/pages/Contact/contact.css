@@ -1,12 +1,23 @@
 .Contents {
-  width: auto;
+  width: 1349px;
   height: auto;
 }
-.Contactcontainer {
-  display: flex;
+
+.container {
+  width: 1140px;
+  height: 600px;
 }
 
+.Contactcontainer {
+  position: absolute;
+  width: 1116px;
+  height: 600px;
+  display: flex;
+  /* gap: 30px; */
+}
 .firstDiv {
+  position: absolute;
+  top: 50px;
   width: 600px;
   height: 500px;
   margin: 5px;
@@ -25,10 +36,13 @@
 }
 
 .secondDiv {
+  position: absolute;
+  top: 80px;
   width: 516px;
   height: 550px;
   margin: 5px;
   padding: 10px;
+  right: 20px;
 }
 
 textarea {
@@ -58,16 +72,27 @@ button {
 .fDlocation {
   gap: 5px;
   display: flex;
+  align-items: center;
+}
+.fDlocation p {
+  margin-bottom: 0px;
 }
 .fDphone {
   gap: 5px;
   display: flex;
+  align-items: center;
+}
+.fDphone p {
+  margin-bottom: 0px;
 }
 .fDemail {
   gap: 5px;
   display: flex;
+  align-items: center;
 }
-
+.fDemail p {
+  margin-bottom: 0px;
+}
 .userNameInput .userEmailInput .userTextInput {
   margin: 5px;
   padding: 5px;
@@ -77,6 +102,17 @@ button {
   font-family: "Roboto";
 }
 
-h4 {
+.userNameInput h4 {
+  text-align: left;
+  margin: 0px;
+}
+
+.userEmailInput h4 {
+  text-align: left;
+  margin: 0px;
+}
+
+.userTextInput h4 {
+  text-align: left;
   margin: 0px;
 }

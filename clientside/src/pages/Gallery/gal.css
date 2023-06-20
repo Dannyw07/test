@@ -236,6 +236,7 @@ button.eighteenholes {
   width: 203px;
   height: 42px;
   margin-left: auto;
+  transition: 0.5s;
 }
 
 button.nineholes {

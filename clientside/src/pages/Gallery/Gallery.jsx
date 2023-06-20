@@ -13,11 +13,13 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function valuetext(value) {
   return `${value}°C`;
 }
 const Gallery = () => {
+  const navigate = useNavigate();
   const [teetime, setTeetime] = useState([]);
   const [hotdeal, setHotdeal] = useState([]);
 
@@ -195,7 +197,7 @@ const Gallery = () => {
               </div>
             ))}
           </div>
-          {activeContent === "content1" && <div>Content 1</div>}
+          {/* {activeContent === "content1" && <div>Content 1</div>} */}
           {activeContent === "content2" && <div>Content 2</div>}
         </div>
       </div>

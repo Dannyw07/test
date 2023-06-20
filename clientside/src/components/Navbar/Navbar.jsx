@@ -107,7 +107,7 @@ function Navbar() {
           <Link to="/booking">Booking</Link>
           <Link to="/news">News</Link>
           <Link to="/contact">Contact</Link>
-          <Link to="/CustomerReview">Review</Link>
+          <Link to="/review">Review</Link>
           <Link to="/gallery">Gallery</Link>
         </div>
       </div>

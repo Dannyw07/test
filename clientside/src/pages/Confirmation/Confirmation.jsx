@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./confirm.css";
 import Navbar from "../../components/Navbar/Navbar";
 import FormGroup from "@mui/material/FormGroup";
@@ -8,15 +8,44 @@ import Logo from "../../components/Images/kinabaluGClogo.png";
 import { faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CountDown from "../../components/CountDown";
+import { useNavigate } from "react-router-dom";
+import {
+  validateEmail,
+  validateFirstName,
+  validateFullName,
+  validateLastName,
+  validateMessage,
+} from "../../components/Validation/validation";
+import InlineError from "../../components/inlineError";
 
 const Confirmation = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  //Error Input Handling//
+  const [firstNameError, setFirstNameError] = useState("");
+  const [lastNameError, setLastNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [messageError, setMessageError] = useState("");
+
+  useEffect(() => {
+    //**********VALIDATION**************/
+    validateFirstName({ firstName, setFirstNameError });
+    validateLastName({ lastName, setLastNameError });
+    validateEmail({ email, setEmailError });
+    validateMessage({ message, setMessageError });
+  }, [firstName, lastName, email, message]);
+
+  const navigate = useNavigate();
   return (
     <div className="confirmation">
       <Navbar />
 
       <div className="personalInfo">
         <div className="timer">
-          <CountDown seconds={3} />
+          <CountDown seconds={180} />
           {/* <p>You have 3 minutes and 30 seconds to complete your booking</p> */}
         </div>
 
@@ -32,23 +61,46 @@ const Confirmation = () => {
               <input
                 type="text"
                 name="firstName"
-                value=""
+                value={firstName}
                 className="usersFN"
+                onChange={(e) => setFirstName(e.target.value)}
               />
             </div>
+            {firstNameError && <InlineError error={firstNameError} />}
             <div className="userFName">
               <p>Last Name</p>
-              <input type="text" name="lastName" value="" className="usersFN" />
+              <input
+                type="text"
+                name="lastName"
+                value={lastName}
+                className="usersLN"
+                onChange={(e) => setLastName(e.target.value)}
+              />
+              {lastNameError && <InlineError error={lastNameError} />}
             </div>
 
             <div className="userFName">
               <p>Email</p>
-              <input type="email" name="email" value="" className="usersFN" />
+              <input
+                type="email"
+                name="email"
+                value={email}
+                className="usersFN"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              {emailError && <InlineError error={emailError} />}
             </div>
 
             <div className="userFName">
               <p>Mobile</p>
-              <input type="text" name="lastName" value="" className="usersFN" />
+              <input
+                type="text"
+                name="lastName"
+                value={message}
+                className="usersFN"
+                onChange={(e) => setMessage(e.target.value)}
+              />
+              {messageError && <InlineError error={messageError} />}
             </div>
             <div className="userMessageDetails">
               <p>Please provide any details for special requirements</p>
@@ -90,7 +142,9 @@ const Confirmation = () => {
           <div className="cButtons">
             <div className="cButton">
               <div className="cancelButton">
-                <button className="redButton">Cancel</button>
+                <button className="redButton" onClick={() => navigate(-1)}>
+                  Cancel
+                </button>
               </div>
               <div className="proceedButton">
                 <button className="blueButton">Proceed</button>

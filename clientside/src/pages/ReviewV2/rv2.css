@@ -1,0 +1,101 @@
+.rv2 {
+  width: 1349px;
+  height: auto;
+}
+
+.topTitle {
+  position: absolute;
+  width: 213px;
+  height: 44px;
+  left: 568px;
+  top: 120px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 44px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.clientSayBox {
+  position: absolute;
+  width: 1349px;
+  height: 72px;
+  top: 170px;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* align-content: center; */
+  /* justify-items: center; */
+}
+.clientSay {
+  width: 387px;
+  height: 72px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #000000;
+}
+.clientSay h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 387px;
+  height: 72px;
+  margin-bottom: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  color: white;
+}
+
+.usersComments {
+  position: absolute;
+  width: 1349px;
+  height: auto;
+  top: 300px;
+}
+
+.usersGrid {
+  width: 900px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.userSections {
+  width: 450px;
+  height: 250px;
+  background-color: white;
+  border-radius: 7px;
+  border: 2px solid black;
+}
+
+.userAvatar {
+  width: 225px;
+  height: 80px;
+  display: flex;
+  gap: 15px;
+  margin: 10px;
+}
+
+img.AvatarTwo {
+  width: 80px;
+  height: 80px;
+}
+
+.userTexts {
+  border-radius: 7px;
+  width: 410px;
+  height: 130px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: grey;
+}

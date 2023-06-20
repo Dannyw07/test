@@ -5,6 +5,7 @@ import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
 import "./review.css";
 import Avatar from "../../components/Images/avatar.png";
+import Background from "../../components/Images/custreview.jpg";
 
 export const Review = () => {
   return (
@@ -12,7 +13,7 @@ export const Review = () => {
       <Navbar />
       <div className="reviewContainer">
         <div className="reviewMain">
-          <img src={BackPic} alt="Golfers" className="mainPic" />
+          <img src={Background} alt="Golfers" className="mainPic" />
           <h2>Customer Review</h2>
         </div>
         <div className="reviewContent">
