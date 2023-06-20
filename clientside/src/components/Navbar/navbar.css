@@ -98,8 +98,9 @@
 .links-2 {
   cursor: pointer;
   width: 300px;
+  height: 40px;
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 
 .cart {
@@ -119,9 +120,9 @@
   border-radius: 50%;
   position: absolute;
 }
-.userSection {
+/* .userSection {
   width: 200px;
-}
+} */
 .name {
   display: flex;
   align-items: center;
@@ -142,12 +143,16 @@
   display: flex;
   flex-direction: column;
   width: 100px;
-  background-color: #7f7f7f;
+  /* background-color: #7f7f7f; */
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 150px;
   top: 40px;
-  right: 30px;
+  right: 85px;
   border-radius: 5px;
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 8px 10px -6px rgb(0 0 0 / 0.1);
+  z-index: 3;
 }
 
 .menuList {

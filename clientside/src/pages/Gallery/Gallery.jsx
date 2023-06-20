@@ -12,77 +12,31 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
+import { useEffect } from "react";
 
 function valuetext(value) {
   return `${value}°C`;
 }
-
-const teetime = [
-  {
-    time: "07:30",
-  },
-  {
-    time: "07:45",
-  },
-  {
-    time: "08:00",
-  },
-  {
-    time: "08:15",
-  },
-  {
-    time: "08:30",
-  },
-  {
-    time: "08:45",
-  },
-];
-
-const hotDeals = [
-  {
-    no: 1,
-    hdTime: "08:00",
-    noPlayer: "1-2 players",
-    noHoles: 18,
-    status: "Available",
-  },
-  {
-    no: 2,
-    hdTime: "08:15",
-    noPlayer: "1-4 players",
-    noHoles: 9,
-    status: "Available",
-  },
-  {
-    no: 3,
-    hdTime: "08:30",
-    noPlayer: "1-2 players",
-    noHoles: 18,
-    status: "Available",
-  },
-  {
-    no: 4,
-    hdTime: "08:45",
-    noPlayer: "1-2 players",
-    noHoles: 9,
-    status: "Available",
-  },
-  {
-    no: 5,
-    hdTime: "09:00",
-    noPlayer: "1-2 players",
-    noHoles: 9,
-    status: "Available",
-  },
-  {
-    no: 6,
-    hdTime: "09:15",
-    noPlayer: "1-2 players",
-    noHoles: 9,
-    status: "Available",
-  },
-];
 const Gallery = () => {
+  const [teetime, setTeetime] = useState([]);
+  const [hotdeal, setHotdeal] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/hotdeals")
+      .then((res) => res.json())
+      .then((data) => setHotdeal(data))
+      // .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  });
+
+  useEffect(() => {
+    fetch("http://localhost:3001/teetimes")
+      .then((res) => res.json())
+      .then((data) => setTeetime(data))
+      // .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  });
+
   const [value, setValue] = React.useState([20, 37]);
 
   const handleChange = (event, newValue) => {
@@ -107,7 +61,7 @@ const Gallery = () => {
       items: 1,
     },
   };
-
+  const [activeContent, setActiveContent] = useState("18");
   return (
     <div className="gal">
       <Navbar />
@@ -129,20 +83,20 @@ const Gallery = () => {
           rewind={true}
           rewindWithAnimation={true}
         >
-          {hotDeals.map((item, index) => (
+          {hotdeal.map((item, index) => (
             <div className="slot-1" key={index}>
               <div className=" justify-content-center ">
                 <div className="hotdeals">
                   <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
-                  <h2 className="time">{item.hdTime}</h2>
+                  <h2 className="time">{item.hotdeal_time}</h2>
                 </div>
                 <div className="slotOneContent">
-                  <h3>{item.noPlayer}</h3>
-                  <h3>{item.noHoles} Holes</h3>
+                  <h3>{item.hotdeal_Nop}</h3>
+                  <h3>{item.hotedeal_Holes} Holes</h3>
                 </div>
                 <div className="AtimeStatus">
                   <h3>Status:</h3>
-                  <h5 className="status2"> {item.status}</h5>
+                  <h5 className="status2"> {item.hotdeal_status}</h5>
                 </div>
               </div>
             </div>
@@ -155,7 +109,7 @@ const Gallery = () => {
           <div className="divDate">
             {/* <div className="tarikh"></div> */}
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DatePicker />
+              <DatePicker closeOnSelect={true} disablePast={true} />
             </LocalizationProvider>
           </div>
           <div className="divDates">
@@ -176,10 +130,22 @@ const Gallery = () => {
 
           <div className="divSelect">
             <div className="divOne">
-              <p>18 Holes</p>
+              {/* <p>18 Holes</p> */}
+              <button
+                className="eighteenholes"
+                onClick={() => setActiveContent("content1")}
+              >
+                18 Holes
+              </button>
             </div>
             <div className="divTwo">
-              <p>9 Holes</p>
+              <button
+                className="nineholes"
+                onClick={() => setActiveContent("content2")}
+              >
+                9 Holes
+              </button>
+              {/* <p>9 Holes</p> */}
             </div>
           </div>
           <hr
@@ -225,10 +191,12 @@ const Gallery = () => {
           <div className="column">
             {teetime.map((item, index) => (
               <div className="avTeetime" key={index}>
-                <p>{item.time}</p>
+                <p>{item.tt_time}</p>
               </div>
             ))}
           </div>
+          {activeContent === "content1" && <div>Content 1</div>}
+          {activeContent === "content2" && <div>Content 2</div>}
         </div>
       </div>
     </div>

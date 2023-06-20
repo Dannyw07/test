@@ -7,6 +7,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Logo from "../../components/Images/kinabaluGClogo.png";
 import { faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CountDown from "../../components/CountDown";
 
 const Confirmation = () => {
   return (
@@ -15,7 +16,8 @@ const Confirmation = () => {
 
       <div className="personalInfo">
         <div className="timer">
-          <p>You have 3 minutes and 30 seconds to complete your booking</p>
+          <CountDown seconds={3} />
+          {/* <p>You have 3 minutes and 30 seconds to complete your booking</p> */}
         </div>
 
         <div className="pInfo">

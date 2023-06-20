@@ -57,7 +57,7 @@ function Navbar() {
         user: providerData[0],
       });
       localStorage.setItem("user", JSON.stringify(providerData[0]));
-      toast.success("Login Successfully!", {
+      toast.success("Login Successfully", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -147,7 +147,7 @@ function Navbar() {
               >
                 {user && user.email === "bi19110060@student.ums.edu.my" && (
                   <p className="menuList" onClick={handleCreateItem}>
-                    Create New Tee-time
+                    Create Tee-time
                     <FontAwesomeIcon
                       icon={faPlus}
                       style={{ color: "#ffffff" }}
@@ -164,10 +164,12 @@ function Navbar() {
 
                 <p className="menuList" onClick={logout}>
                   Logout
-                  <FontAwesomeIcon
-                    icon={faRightFromBracket}
-                    style={{ color: "#f7f7f7" }}
-                  />
+                  <div className="fontposition">
+                    <FontAwesomeIcon
+                      icon={faRightFromBracket}
+                      style={{ color: "#f7f7f7" }}
+                    />
+                  </div>
                 </p>
               </motion.div>
             )}

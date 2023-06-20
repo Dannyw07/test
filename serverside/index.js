@@ -8,21 +8,37 @@ app.use(express.json());
 app.use(cors());
 
 //***********SEND API */
-app.post("/send", async (req, res) => {
-  try {
-    const { fullName, email, message } = req.body;
-    res.json({ msg: "server" });
-  } catch (error) {
-    res.status(404).json({ msg: "Error " });
-  }
+// app.post("/send", async (req, res) => {
+//   try {
+//     const { fullName, email, message } = req.body;
+//     res.json({ msg: "server" });
+//   } catch (error) {
+//     res.status(404).json({ msg: "Error " });
+//   }
+// });
+
+const db = mysql.createConnection({
+  user: "root",
+  host: "localhost",
+  password: "12345",
+  database: "fyp2",
 });
 
-// const db = mysql.createConnection({
-//   user: "root",
-//   host: "localhost",
-//   password: "12345",
-//   database: "fyp2",
-// });
+app.get("/teetimes", (req, res) => {
+  const sql = "SELECT * FROM teetimes ORDER BY tt_time ASC";
+  db.query(sql, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+
+app.get("/hotdeals", (req, res) => {
+  const sql = "SELECT * FROM hotdeals ORDER BY hotdeal_time ASC";
+  db.query(sql, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
 
 // app.post("/register", (req, res) => {
 //   const users_firstName = req.body.firstName;
@@ -56,6 +72,10 @@ app.post("/send", async (req, res) => {
 //       }
 //     }
 //   );
+// });
+
+// app.get("/", (re, res) => {
+//   return res.json("From server side");
 // });
 
 app.listen(3001, () => {

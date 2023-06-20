@@ -133,10 +133,16 @@ li.react-multi-carousel-item--active {
 
 .column {
   padding: 30px;
-  display: flex;
+  /* display: flex; */
   gap: 10px;
   margin-left: 0px;
   margin-right: 0px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  /* grid-template-rows: repeat(5, 1fr); */
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-auto-rows: min-content;
 }
 .avTeetime {
   cursor: pointer;
@@ -223,6 +229,25 @@ li.react-multi-carousel-item--active {
   color: white;
 }
 
+button.eighteenholes {
+  font-weight: bolder;
+  margin-top: 0px;
+  background-color: #021e39;
+  width: 203px;
+  height: 42px;
+  margin-left: auto;
+}
+
+button.nineholes {
+  font-weight: bolder;
+  margin-top: 0px;
+  background-color: white;
+  color: #021e39;
+  width: 203px;
+  height: 42px;
+  margin-right: auto;
+}
+
 .divTwo {
   background-color: white;
   width: 203px;
@@ -273,7 +298,7 @@ button.refreshTeeTime {
   position: absolute;
   background-color: white;
   width: 748px;
-  height: 219px;
+  height: auto;
   right: 43px;
   border-radius: 5px;
   border: 1px solid lightgrey;
