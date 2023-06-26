@@ -1,10 +1,5 @@
 {
   "dependencies": {
-    "@mui/x-date-pickers": "^6.8.0",
-    "date-fns": "^2.30.0",
-    "dayjs": "^1.11.8",
-    "react-datepicker": "^4.14.0",
-    "react-day-picker": "^8.7.1",
     "react-multi-carousel": "^2.8.4"
   }
 }

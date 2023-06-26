@@ -1,165 +1,272 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
-import { faGolfBallTee, faPerson } from "@fortawesome/free-solid-svg-icons";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import "./gal.css";
+import "../AvailableTime/AvailableTime.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import { faFire } from "@fortawesome/free-solid-svg-icons";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import Box from "@mui/material/Box";
+import DatePicker from "react-datepicker";
+import Slider from "@mui/material/Slider";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import FooterV2 from "../../components/Footerv2/FooterV2";
+import "react-datepicker/dist/react-datepicker.css";
+import { debounce } from "lodash";
+import { Link } from "react-router-dom";
+import Navbarv2 from "../../components/Navbarv2/Navbarv2";
 
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import Footer from "../../components/Footer/Footer";
-import { useNavigate } from "react-router-dom/dist/umd/react-router-dom.development";
-import Image from "react-bootstrap/esm/Image";
-
+function valuetext(value) {
+  return `${value}°C`;
+}
 const Booking = () => {
-  const [hole, setHole] = React.useState("");
-  const [player, setPlayer] = React.useState("");
-
-  const handleChange1 = (event) => {
-    setHole(event.target.value);
-  };
-
-  const handleChange2 = (event) => {
-    setPlayer(event.target.value);
-  };
-
+  // const [values, setValues] = (React.useState < Dayjs) | (null > null);
   const navigate = useNavigate();
+  const [teetime, setTeetime] = useState([]);
+  const [teeholes, setTeeholes] = useState([]);
+  const [hotdeal, setHotdeal] = useState([]);
 
-  const navigateToContacts = () => {
-    navigate("/contact");
-  };
+  useEffect(() => {
+    fetch("http://localhost:8081/hotdeals")
+      .then((res) => res.json())
+      .then((data) => setHotdeal(data))
+      // .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  });
 
-  const handleSearch = () => {
-    navigate("/availableTime");
+  useEffect(() => {
+    fetch("http://localhost:8081/teetimes")
+      .then((res) => res.json())
+      .then((data) => setTeetime(data))
+      // .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  });
+  useEffect(() => {
+    fetch("http://localhost:8081/teetimes/holes")
+      .then((res) => res.json())
+      .then((data) => setTeeholes(data))
+      // .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  });
+
+  // useEffect(() => {
+  //   fetch("http://localhost:3001/teetimes/holes/9")
+  //     .then((res) => res.json())
+  //     .then((data) => setTeeholes(data))
+  //     // .then((data) => console.log(data))
+  //     .catch((err) => console.log(err));
+  // });
+
+  const [value, setValue] = React.useState([20, 37]);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
   };
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 10,
+    },
+    desktop: {
+      breakpoint: { max: 1500, min: 1249 },
+      items: 5,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+  const [activeContent, setActiveContent] = useState("");
+
+  // const [selectedDate, setSelectedDate] = useState(new Date());
+
+  const [startDate, setStartDate] = useState(null);
+
+  // console.log({ startDate });
+
+  const handleDateChange = debounce((date) => {
+    setStartDate(date);
+    console.log(date); // Log the selected date
+  }, 300); // Adjust the delay time (in milliseconds) as needed
+
   return (
-    <div style={{ height: "100%" }}>
-      <Navbar />
-      <div>
-        <Image
-          src="https://image.deemples.com/wp-content/uploads/2018/06/tourism-malaysia.jpg"
-          width="90%"
-          height="500px"
-          alt="description of the image"
+    <div className="gal">
+      {/* <Navbar /> */}
+      <Navbarv2 />
+      <div className="hotDealDashBoard">
+        <FontAwesomeIcon
+          icon={faFire}
+          style={{ color: "#f8f9fc", fontSize: "40px" }}
         />
+        <h1>Hot Deals Today</h1>
       </div>
 
-      <div className="p-5">
-        {/* <h1 className="text-start px-2 ">Hello this is Booking page</h1> */}
-
-        <div
-          className="headerSearch sticky "
-          style={{ position: "sticky -webkit-sticky", top: 0 }}
+      <div className="GalContainer">
+        <Carousel
+          responsive={responsive}
+          centerMode={true}
+          autoPlay={true}
+          autoPlaySpeed={5000}
+          rewind={true}
+          rewindWithAnimation={true}
         >
-          <div
-            className=" bg-white d-flex align-items-center rounded justify-content-between border border-5 border-solid p-1 mx-auto top-0"
-            style={{ height: "80px", width: "70%", color: "#febb02" }}
-          >
-            <div
-              className="headerSearchItem d-flex align-items-center gap-10 "
-              style={{ height: "70px", color: "lightgray" }}
-            >
-              {/* <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" /> */}
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <DatePicker disablePast />
-              </LocalizationProvider>
+          {hotdeal.map((item, index) => (
+            <div className="slot-1" key={index}>
+              <div className="justify-content-center ">
+                <div className="hotdeals">
+                  <FontAwesomeIcon icon={faFire} style={{ color: "#f8f9fc" }} />
+                  <h2 className="time">{item.hotdeal_time}</h2>
+                </div>
+                <div className="slotOneContent">
+                  <h3>{item.hotdeal_Nop}</h3>
+                  <h3>{item.hotdeal_Holes} Holes</h3>
+                </div>
+                <div className="AtimeStatus">
+                  <h3>Status:</h3>
+                  <h5 className="status2"> {item.hotdeal_status}</h5>
+                </div>
+              </div>
             </div>
+          ))}
+        </Carousel>
+      </div>
 
-            <div
-              className="headerSearchItem d-flex align-items-center gap-10 "
-              style={{ height: "70px", color: "lightgray" }}
-            >
-              <FontAwesomeIcon icon={faGolfBallTee} className="headerIcon" />
-              <FormControl sx={{ m: 1, minWidth: 200 }}>
-                <InputLabel id="demo-simple-select-helper-label">
-                  Number of Holes
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-helper-label"
-                  id="demo-simple-select-helper"
-                  value={hole}
-                  label="Holes"
-                  onChange={handleChange1}
-                >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value={9}>9</MenuItem>
-                  <MenuItem value={18}>18</MenuItem>
-                </Select>
-              </FormControl>
+      <div className="Navigation">
+        <div className="leftNav">
+          <div className="divDate">
+            {/* <div className="tarikh"></div> */}
+            {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DatePicker
+                disablePast={true}
+              />
+            </LocalizationProvider> */}
+            <DatePicker
+              placeholderText="Pick a date"
+              dateFormat="MMMM d, yyyy"
+              selected={startDate}
+              // onChange={(newValue) => {
+              //   setStartDate(newValue);
+              // }}
+              onChange={handleDateChange}
+            />
+          </div>
+          <div className="divDates">
+            <div className="divInfo">
+              <div className="tarikh-1">Time</div>
+              <div className="tarikh-2">07:00 - 20:00</div>
             </div>
+            <Box sx={{ width: 406 }}>
+              <Slider
+                getAriaLabel={() => "Temperature range"}
+                value={value}
+                onChange={handleChange}
+                valueLabelDisplay="auto"
+                getAriaValueText={valuetext}
+              />
+            </Box>
+          </div>
 
-            <div
-              className="headerSearchItem d-flex align-items-center gap-10 "
-              style={{ height: "70px", color: "lightgray" }}
-            >
-              <FontAwesomeIcon icon={faPerson} className="headerIcon" />
-              <FormControl sx={{ m: 1, minWidth: 200 }}>
-                <InputLabel id="demo-simple-select-helper-label">
-                  Number of Players
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-helper-label"
-                  id="demo-simple-select-helper"
-                  value={player}
-                  label="player"
-                  onChange={handleChange2}
-                >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value={10}>1</MenuItem>
-                  <MenuItem value={20}>2</MenuItem>
-                  <MenuItem value={30}>3</MenuItem>
-                  <MenuItem value={40}>4</MenuItem>
-                </Select>
-              </FormControl>
-            </div>
-
-            <div className="headerSearchItem d-flex align-items-center gap-10 ">
+          <div className="divSelect">
+            <div className="divOne">
               <button
-                className="headerBtn p-10 fw-500 border-0 bg-primary rounded"
-                style={{ height: "60px", width: "140px", color: " white" }}
-                onClick={handleSearch}
+                className="eighteenholes"
+                onClick={() => setActiveContent("18")}
               >
-                Search
+                18 Holes
+              </button>
+            </div>
+            <div className="divTwo">
+              <button
+                className="nineholes"
+                onClick={() => setActiveContent("9")}
+              >
+                9 Holes
               </button>
             </div>
           </div>
+          <hr
+            style={{
+              width: "406px",
+              background: "black",
+              height: "2px",
+              border: "none",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          />
+
+          <div className="filterTeetime">
+            <p>Group Tee Times By</p>
+          </div>
+
+          <div className="divSelect">
+            <div className="divOne">
+              <p>Price</p>
+            </div>
+            <div className="divTwo">
+              <p>Time</p>
+            </div>
+          </div>
+
+          <hr
+            style={{
+              width: "406px",
+              background: "black",
+              height: "2px",
+              border: "none",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          />
+
+          <button className="refreshTeeTime">REFRESH TEE TIME</button>
+        </div>
+
+        <div className="rightNav">
+          <h3>TEE TIMES FROM RM185</h3>
+
+          {/* <div className="column">
+            {teetime.map((item, index) => (
+              <div className="avTeetime" key={index}>
+                <p>{item.tt_time}</p>
+              </div>
+            ))}
+          </div> */}
+          {activeContent === "18" && (
+            <div className="column">
+              {teeholes.map((item, index) => {
+                return (
+                  <div className="avTeetime" key={index}>
+                    <Link to="/confirm">
+                      <p>{item.tt_time}</p>
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+          {/* {activeContent === "9" && (
+            <div className="column">
+              {teeholes.map((item, index) => (
+                <div className="avTeetime" key={index}>
+                  <p>{item.tt_time}</p>
+                </div>
+              ))}
+            </div>
+          )} */}
         </div>
       </div>
-
-      <div className=" m5 p-5 bg-secondary ">
-        <h2 className="text-start m-5  ">Featured</h2>
-
-        <div className="p-5">
-          <h3>Latest News</h3>
-          <h4>
-            Prepare to have your senses and skills challenged. Now you can
-            experience to play at Premier Course!
-          </h4>
-        </div>
-      </div>
-
-      <div className=" m-4 p-5 bg-dark d-flex justify-content-center align-items-center ">
-        <h2 className="text-start m-5 text-center" style={{ color: "white" }}>
-          Have a question? Reach out any time
-        </h2>
-
-        <button
-          onClick={navigateToContacts}
-          className="bg-success m-0"
-          style={{ color: "white", height: "80px", width: "200px" }}
-        >
-          CONTACT US
-        </button>
-      </div>
-      <Footer />
+      <FooterV2 />
     </div>
   );
 };

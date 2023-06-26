@@ -1,0 +1,350 @@
+.gal {
+  width: 1349px;
+  height: auto;
+  background-color: #bab499;
+}
+
+.czn {
+  width: 300px;
+  height: 300px;
+}
+
+.react-multi-carousel-list {
+  margin: 10px;
+  padding: 5px;
+}
+
+ul.react-multi-carousel-track {
+  width: 1329px;
+  gap: 10px;
+}
+button.react-multiple-carousel__arrow {
+  width: 20px;
+}
+
+button.react-multiple-carousel__arrow--left {
+  width: 20px;
+}
+
+li.react-multi-carousel-item {
+  width: 216px;
+  height: 177.17px;
+  /* height: 177.17px; */
+  /* background-color: black; */
+  color: white;
+}
+li.react-multi-carousel-item--active {
+  /* height: 200px; */
+  width: 216px;
+  height: 177.17px;
+  /* height: 177.17px; */
+}
+
+.Time {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.AtimeContent {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  background-color: #fb8c00;
+  color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+  gap: 5px;
+  padding-left: 10px;
+}
+
+.hotdeals {
+  /* margin-top: 5px; */
+  display: flex;
+  background-color: #fb8c00;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.time {
+  color: white;
+}
+
+.AtimeStatus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.AtimeStatus h3 {
+  color: black;
+}
+
+.status2 {
+  margin-top: 4px;
+  padding: 1px;
+  background: #43a047;
+  color: white;
+  border-radius: 4px;
+}
+
+.slot-1 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 216px;
+  height: 177.17px;
+  background: white;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  border: #fb8c00;
+  border-style: solid;
+  cursor: pointer;
+}
+.justifyContentCenter {
+  width: 216px;
+  height: 177.17px;
+}
+.hotDealDashBoard {
+  padding: 5px;
+  background-color: orange;
+  width: 1349px;
+  height: 59px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.normalRate {
+  width: 1000px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  border: 5px solid grey;
+}
+
+.normalRate h1 {
+  color: black;
+  text-align: center;
+  padding: 10px;
+}
+
+.column {
+  padding: 30px;
+  /* display: flex; */
+  gap: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  /* grid-template-rows: repeat(5, 1fr); */
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-auto-rows: min-content;
+}
+.avTeetime {
+  cursor: pointer;
+  background-color: #3b5998;
+  width: 106px;
+  height: 50px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+/* .avTeetime:hover {
+  background-color: white;
+  color: #3b5998;
+  border: 3px solid #3b5998;
+} */
+
+.avTeetime p {
+  color: white;
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 0px;
+}
+
+/* .avTeetime p :hover {
+  background-color: white;
+  color: #3b5998;
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 0px;
+} */
+.Navigation {
+  flex: 0;
+  width: 1349px;
+  height: 600px;
+  display: flex;
+  gap: 30px;
+}
+.leftNav {
+  position: absolute;
+  width: 477px;
+  height: 400px;
+  left: 37px;
+  background-color: beige;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.divDate {
+  background-color: white;
+  width: 406px;
+  height: 42px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.divDates {
+  background-color: white;
+  width: 406px;
+  height: 42px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.divInfo {
+  display: flex;
+}
+.tarikh-1 {
+  text-align: left;
+  width: 203px;
+  height: 21px;
+}
+.tarikh-2 {
+  text-align: end;
+  width: 203px;
+  height: 21px;
+}
+
+.divSelect {
+  display: flex;
+}
+
+.divOne {
+  width: 203px;
+  height: 42px;
+}
+
+.divOne {
+  background-color: #021e39;
+  width: 203px;
+  height: 42px;
+  margin-left: auto;
+  color: white;
+}
+
+button.eighteenholes {
+  font-weight: bolder;
+  margin-top: 0px;
+  background-color: #021e39;
+  width: 203px;
+  height: 42px;
+  margin-left: auto;
+  transition: 0.5s;
+}
+
+button.nineholes {
+  font-weight: bolder;
+  margin-top: 0px;
+  background-color: white;
+  color: #021e39;
+  width: 203px;
+  height: 42px;
+  margin-right: auto;
+}
+
+.divTwo {
+  background-color: white;
+  width: 203px;
+  height: 42px;
+  margin-right: auto;
+}
+
+.divOne p {
+  font-weight: bolder;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divTwo p {
+  font-weight: bolder;
+  color: #021e39;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filterTeetime {
+  margin-left: 35px;
+}
+.filterTeetime p {
+  margin-bottom: 0px;
+}
+
+button.refreshTeeTime {
+  cursor: pointer;
+  background-color: #3b5998;
+  width: 406px;
+  height: 42px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+}
+.uiBox-root {
+  width: 406px;
+}
+.MuiSlider-root {
+  height: 6px;
+}
+.rightNav {
+  position: absolute;
+  background-color: white;
+  width: 748px;
+  height: auto;
+  right: 43px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+}
+
+.rightNav h3 {
+  margin: 10px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.MuiFormControl-root {
+  width: 406px;
+  height: 42px;
+}
+.MuiInputBase-root {
+  width: 406px;
+  height: 42px;
+}
+
+button.MuiButtonBase-root {
+  width: 37px;
+  height: 37px;
+}
+
+.react-datepicker-wrapper {
+  width: 406px;
+  height: 40px;
+}
+
+.react-datepicker-wrapper input {
+  width: 406px;
+  height: 40px;
+}

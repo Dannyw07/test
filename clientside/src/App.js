@@ -15,13 +15,17 @@ import CreateItem from "./pages/CreateItem/CreateItem";
 import TeeTime from "./pages/Teetime/TeeTime";
 import Slot2 from "./pages/Slot2/Slot2";
 import { Review } from "./pages/Reviews/Review";
-import Gallery from "./pages/Gallery/Gallery";
-import News from "./pages/News/News";
+// import Gallery from "./pages/Gallery/Gallery";
+// import News from "./pages/News/News";
 import Blog from "./pages/Blog/Blog";
 import Single from "./pages/Single/Single";
 import Confirmation from "./pages/Confirmation/Confirmation";
 import ReviewV2 from "./pages/ReviewV2/ReviewV2";
 import FooterV2 from "./components/Footerv2/FooterV2";
+import Write from "./pages/Write/Write";
+import LoginV2 from "./pages/LoginV2/LoginV2";
+import RegisterV2 from "./pages/RegisterV2/RegisterV2";
+// import Navbarv2 from "./components/Navbarv2/Navbarv2";
 
 function App() {
   // const navigate = useNavigate();
@@ -40,8 +44,8 @@ function App() {
             {/* <Route path="/news" element={<News />} /> */}
             <Route path="/news" element={<Blog />} />
             <Route path="/blog1" element={<Single />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<RegisterV2 />} />
+            <Route path="/login" element={<LoginV2 />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/availableTime" element={<AvailableTime />} />
             <Route path="/MyAccount" element={<MyAccount />} />
@@ -49,10 +53,12 @@ function App() {
             <Route path="/availableTime/slot-2" element={<Slot2 />} />
             <Route path="/createItem" element={<CreateItem />} />
             <Route path="/CustomerReview" element={<Review />} />
-            <Route path="/gallery" element={<Gallery />} />
+            {/* <Route path="/gallery" element={<Gallery />} /> */}
             <Route path="/confirm" element={<Confirmation />} />
             <Route path="/review" element={<ReviewV2 />} />
             <Route path="/footerv2" element={<FooterV2 />} />
+            <Route path="/write" element={<Write />} />
+            {/* <Route path="" */}
           </Routes>
         </BrowserRouter>
       </div>

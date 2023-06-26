@@ -1,5 +1,5 @@
 .footTwos {
-  background-color: blue;
+  background-color: #5c7a15;
   width: 1349px;
   height: 200px;
 }
@@ -12,7 +12,7 @@
 .footerContent {
   position: absolute;
   background-color: red;
-  width: 1325px;
+  width: 1325.32px;
   height: 180px;
   margin: 10px;
   /* padding: 5px; */
@@ -25,30 +25,38 @@
 }
 
 .footerAbout {
-  background-color: white;
-  width: 336.25px;
+  /* background-color: white; */
+  background-color: #5c7a15;
+  width: 336.41px;
   height: 180px;
   /* padding: 10px; */
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
+  color: white;
 }
 
 .footerAbout2 {
-  background-color: white;
-  width: 336.25px;
+  /* background-color: white; */
+  background-color: #5c7a15;
+  width: 336.41px;
   height: 180px;
+  color: white;
 }
 
 .footerAbout3 {
-  background-color: pink;
+  /* background-color: white; */
+  background-color: #5c7a15;
   width: 336.25px;
   height: 180px;
   padding: 5px;
+  color: white;
 }
 .footerAbout4 {
-  background-color: green;
+  /* background-color: white; */
+  background-color: #5c7a15;
   width: 336.25px;
   height: 180px;
   padding: 5px;
+  color: white;
 }
 
 .footerAboutContainer {
@@ -59,9 +67,10 @@
   margin-left: auto;
   margin-right: auto;
 }
-.footerAboutContainer h5 {
+.footerAboutContainer h6 {
   text-align: left;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .footerAboutContainer p {
@@ -70,9 +79,130 @@
 
 .footerAboutInfo {
   padding: 3px;
-  width: 240px;
+  width: 190px;
   height: 180px;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+.footerHOO {
+  padding: 3px;
+  width: 203.75px;
+  height: 180px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footerAboutInfo {
+  text-align: left;
+}
+
+.footerAboutInfo h6 {
+  font-weight: bold;
+}
+
+.footerIcons {
+  align-items: center;
+}
+
+.footerEnvelope {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.footerEnvelope p {
+  margin-bottom: 0px;
+}
+
+.footerPhone {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.footerPhone p {
+  margin-bottom: 0px;
+}
+
+.footerLocation {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footerLocation p {
+  text-align: left;
+  margin-bottom: 0px;
+  line-height: normal;
+}
+
+svg.fa-location-dot {
+  margin-top: 5px;
+  margin-bottom: auto;
+}
+.footerHOO {
+  padding: 3px;
+  width: 203.75px;
+  height: 180px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footerHOO h6 {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.MonWed {
+  width: 203.75px;
+  display: flex;
+  gap: 10px;
+}
+.ThursFri {
+  width: 203.75px;
+  display: flex;
+  gap: 10px;
+}
+
+.Sat {
+  width: 203.75px;
+  height: 35px;
+  display: flex;
+  gap: 10px;
+}
+
+.MonWed p {
+  margin-bottom: 0px;
+}
+
+.ThursFri p {
+  margin-bottom: 0px;
+}
+
+.Sat {
+  margin-bottom: 0px;
+}
+p.sat {
+  width: 74.78px;
+}
+p.Thurs {
+  width: 74.78px;
+}
+p.Fri {
+  text-align: right;
+}
+
+.footerPages {
+  padding: 3px;
+  width: 203.75px;
+  height: 180px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footerPages h6 {
+  font-weight: bold;
 }

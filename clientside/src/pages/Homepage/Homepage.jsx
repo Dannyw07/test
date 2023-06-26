@@ -1,15 +1,16 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
+// import Navbar from "../../components/Navbar/Navbar";
 import Carousell from "../../components/Carousel/Carousell";
 import Footer from "../../components/Footer/Footer";
 import MainContainer from "../../components/MainContainer/MainContainer";
 import PersonOne from "../../components/Images/PersonOne.png";
 import "./homepage.css";
+import Navbarv2 from "../../components/Navbarv2/Navbarv2";
 
 const Homepage = () => {
   return (
     <div>
-      <Navbar />
+      <Navbarv2 />
       <div className="homepageContainer">
         <MainContainer />
         <br />

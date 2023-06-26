@@ -1,0 +1,106 @@
+.writeBB {
+  position: relative;
+  width: 1349px;
+  height: 720px;
+}
+
+.writeContainer {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.item {
+  border: 1px solid lightgrey;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+.writeContent {
+  /* flex: 5; */
+  width: 900px;
+  margin: 20px;
+}
+.writeContent input {
+  width: 900px;
+}
+
+.writeEditorConter {
+  margin-top: 10px;
+  height: 300px;
+  overflow: scroll;
+  border: 1px solid lightgrey;
+}
+
+.wEditor {
+  height: 100%;
+  border: none;
+}
+.writeMenu {
+  width: 350px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input.writeRadio {
+  width: 15px;
+}
+
+.wButtons {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.writeRbutts {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 25px;
+}
+
+.item h3 {
+  text-align: left;
+}
+
+.ql-toolbar {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+span {
+  text-align: left;
+}
+
+label {
+  text-align: left;
+}
+
+.writeButton {
+  display: flex;
+  width: 328px;
+  height: 50px;
+  gap: 60px;
+}
+
+button.drafButton {
+  margin-top: 0px;
+  width: 130px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+button.updateButton {
+  margin-top: 0px;
+  width: 130px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+label.inputFile {
+  cursor: pointer;
+  text-decoration: underline;
+}

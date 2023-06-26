@@ -6,6 +6,7 @@ import Edit from "../../components/Images/edit.png";
 import Delete from "../../components/Images/delete.png";
 import { Link } from "react-router-dom";
 import Menus from "../../components/Menus/Menus";
+import FooterV2 from "../../components/Footerv2/FooterV2";
 
 const Single = () => {
   return (
@@ -74,6 +75,7 @@ const Single = () => {
           <Menus />
         </div>
       </div>
+      <FooterV2 />
     </div>
   );
 };

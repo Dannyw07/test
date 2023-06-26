@@ -108,7 +108,7 @@ function Navbar() {
           <Link to="/news">News</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/review">Review</Link>
-          <Link to="/gallery">Gallery</Link>
+          {/* <Link to="/gallery">Gallery</Link> */}
         </div>
       </div>
       <div className="rightSide">
@@ -126,9 +126,17 @@ function Navbar() {
               <p className="paragraphColor">1</p>
             </div>
           </div>
+
           {/* <Link to="/register">Sign Up</Link>
           <Link to="/login">Login</Link> */}
-          <div className="userSection">
+
+          <div className="LoginButton">
+            <button type="submit" className="loginBut">
+              Login
+            </button>
+          </div>
+
+          {/* <div className="userSection">
             <motion.img
               whileTap={{ scale: 0.6 }}
               src={user ? user.photoURL : Avatar}
@@ -173,7 +181,7 @@ function Navbar() {
                 </p>
               </motion.div>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -32,7 +32,7 @@ const validateFirstName = ({ firstName, setFirstNameError }) => {
 };
 //validate last name
 const validateLastName = ({ lastName, setLastNameError }) => {
-  return lastName && lastName.length < 5
+  return lastName && lastName.length < 4
     ? setLastNameError("Last Name is too short")
     : lastName && lastName.length > 50
     ? setLastNameError("Last Name is too long")

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import { Typography, Grid, Button, TextField } from "@mui/material";
-import validate from "validate.js";
-import emailjs from "emailjs-com";
+// import Navbar from "../../components/Navbar/Navbar";
+// import { Typography, Grid, Button, TextField } from "@mui/material";
+// import validate from "validate.js";
+// import emailjs from "emailjs-com";
 import "./contact.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import WebFont from "webfontloader";
+import axios from "axios";
 
 import {
   faLocationDot,
@@ -18,6 +19,8 @@ import {
   validateMessage,
 } from "../../components/Validation/validation";
 import InlineError from "../../components/inlineError";
+import FooterV2 from "../../components/Footerv2/FooterV2";
+import Navbarv2 from "../../components/Navbarv2/Navbarv2";
 
 const Contact = () => {
   useEffect(() => {
@@ -45,9 +48,23 @@ const Contact = () => {
   }, [fullName, email, message]);
 
   console.log(fullNameError);
+
+  const [input, setInputs] = useState({});
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    console.log(input);
+  };
   return (
     <div className="Contents">
-      <Navbar />
+      <Navbarv2 />
       <div className="Contactcontent">
         <div className="container">
           <div className="Contactcontainer">
@@ -80,7 +97,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="secondDiv" style={{ fontFamily: "Roboto" }}>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="userNameInput">
                   <h4>Name</h4>
                   <input
@@ -88,8 +105,9 @@ const Contact = () => {
                     // id="name"
                     className="form-control"
                     name="name"
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
+                    // value={fullName}
+                    // onChange={(e) => setFullName(e.target.value)}
+                    onChange={handleChange}
                   />
 
                   {fullNameError && <InlineError error={fullNameError} />}
@@ -101,8 +119,9 @@ const Contact = () => {
                     id="email"
                     className="form-control"
                     name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    // value={email}
+                    // onChange={(e) => setEmail(e.target.value)}
+                    onChange={handleChange}
                   />
                   {emailError && <InlineError error={emailError} />}
                 </div>
@@ -111,18 +130,19 @@ const Contact = () => {
                   <textarea
                     className="form-control"
                     name="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    // value={message}
+                    onChange={handleChange}
+                    // onChange={(e) => setMessage(e.target.value)}
                   />
                   {messageError && <InlineError error={messageError} />}
                 </div>
                 <button>Send Message</button>
               </form>
-            </div>{" "}
-            *
+            </div>
           </div>
         </div>
       </div>
+      <FooterV2 />
     </div>
   );
 };

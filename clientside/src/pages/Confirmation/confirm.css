@@ -4,7 +4,8 @@
 }
 
 .personalInfo {
-  position: absolute;
+  /* position: absolute; */
+  position: relative;
   width: 963px;
   height: 1080px;
   left: 22px;
@@ -162,7 +163,7 @@ button.blueButton {
   width: 307px;
   height: 1030px;
   left: 1018px;
-  /* top: 30px; */
+  top: 80px;
   margin-top: 30px;
   background: white;
   border-radius: 5px;
@@ -212,4 +213,14 @@ button.emLinks {
   width: 280px;
   height: 50px;
   border-radius: 4px;
+}
+
+table.booksTable {
+  width: 481.5px;
+  height: 200px;
+  border: 1px solid grey;
+}
+
+td {
+  text-align: left;
 }

@@ -1,3 +1,9 @@
+.BlogContainer {
+  width: 1349px;
+  height: auto;
+  /* background-color: #645b48; */
+}
+
 .posts {
   margin-top: 50px;
   display: flex;

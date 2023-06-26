@@ -3,11 +3,13 @@ import Navbar from "../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import "./news.css";
 import Blog from "../Blog/Blog";
+import FooterV2 from "../../components/Footerv2/FooterV2";
+import NavbarV2 from "../../components/Navbarv2/Navbarv2";
 
 function News() {
   return (
     <div className="news">
-      <Navbar />
+      <NavbarV2 />
       <div className="newscontainer">
         <div className="newslinks">
           <Link className="link" to="/?cat=art">

@@ -7,12 +7,11 @@ import pictureTwo from "../../components/Images/pictureTwo.jpeg";
 function Carousell() {
   return (
     <Carousel>
-      <Carousel.Item>
+      <Carousel.Item style={{ width: "1349px", height: "500px" }}>
         <img
-          className="d-block w-100 "
-          // src="https://www.golfpass.com/travel-advisor/courses/22525-kinabalu-golf-club"
           src={KotaOne}
           alt="First slide"
+          style={{ width: "1349px", height: "500px" }}
         />
         <Carousel.Caption>
           <h3>Kinabalu Golfclub</h3>
@@ -20,12 +19,7 @@ function Carousell() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block w-100 "
-          // src="https://media.gettyimages.com/id/1331553272/photo/viktor-axelsen-of-team-denmark-celebrates-as-he-wins-against-shi-yu-qi-of-team-china-during-a.jpg?s=612x612&w=gi&k=20&c=W8Z-myFQgeYkFidaAI_cAobk8jwLpohWcDWi2-Su5B8="
-          src={kotaTwo}
-          alt="Second slide"
-        />
+        <img className="d-block w-100" src={kotaTwo} alt="Second slide" />
 
         <Carousel.Caption>
           <h3>Kinabalu Golfclub</h3>
@@ -34,12 +28,7 @@ function Carousell() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block w-100 "
-          // src="https://static01.nyt.com/images/2012/08/06/sports/BADMINTON1/BADMINTON1-superJumbo.jpg"
-          src={pictureTwo}
-          alt="Third slide"
-        />
+        <img className="d-block w-100 " src={pictureTwo} alt="Third slide" />
 
         <Carousel.Caption>
           <h3>Kinabalu Golfclub</h3>

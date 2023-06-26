@@ -3,6 +3,7 @@ import "./blog.css";
 import { Link } from "react-router-dom";
 import News from "../News/News";
 import Navbar from "../../components/Navbar/Navbar";
+import FooterV2 from "../../components/Footerv2/FooterV2";
 
 const Blog = () => {
   const posts = [
@@ -32,7 +33,7 @@ const Blog = () => {
     },
   ];
   return (
-    <div>
+    <div className="BlogContainer">
       <News />
       <div className="home">
         <div className="posts">
@@ -52,6 +53,7 @@ const Blog = () => {
           ))}
         </div>
       </div>
+      <FooterV2 />
     </div>
   );
 };

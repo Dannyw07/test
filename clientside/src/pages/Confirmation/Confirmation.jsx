@@ -17,6 +17,14 @@ import {
   validateMessage,
 } from "../../components/Validation/validation";
 import InlineError from "../../components/inlineError";
+import FooterV2 from "../../components/Footerv2/FooterV2";
+import Select from "react-select";
+
+const options = [
+  { value: "1", label: "1 Golfer" },
+  { value: "2", label: "2 Golfer" },
+  { value: "3", label: "3 Golfer" },
+];
 
 const Confirmation = () => {
   const [firstName, setFirstName] = useState("");
@@ -64,6 +72,7 @@ const Confirmation = () => {
                 value={firstName}
                 className="usersFN"
                 onChange={(e) => setFirstName(e.target.value)}
+                placeholder="First Name"
               />
             </div>
             {firstNameError && <InlineError error={firstNameError} />}
@@ -73,8 +82,9 @@ const Confirmation = () => {
                 type="text"
                 name="lastName"
                 value={lastName}
-                className="usersLN"
+                className="usersFN"
                 onChange={(e) => setLastName(e.target.value)}
+                placeholder="Last Name"
               />
               {lastNameError && <InlineError error={lastNameError} />}
             </div>
@@ -87,6 +97,7 @@ const Confirmation = () => {
                 value={email}
                 className="usersFN"
                 onChange={(e) => setEmail(e.target.value)}
+                placeholder="danny@gmail.com"
               />
               {emailError && <InlineError error={emailError} />}
             </div>
@@ -99,8 +110,13 @@ const Confirmation = () => {
                 value={message}
                 className="usersFN"
                 onChange={(e) => setMessage(e.target.value)}
+                placeholder="+1 567-432-1234"
               />
               {messageError && <InlineError error={messageError} />}
+            </div>
+            <div className="userFName">
+              <p>Number of Golfers</p>
+              <Select options={options} />
             </div>
             <div className="userMessageDetails">
               <p>Please provide any details for special requirements</p>
@@ -127,7 +143,35 @@ const Confirmation = () => {
             </div>
 
             <div className="bookingTable">
-              <p>this is booking table</p>
+              {/* <p>this is booking table</p> */}
+              <table className="booksTable">
+                <tbody>
+                  <tr>
+                    <th>Booking Type</th>
+                    <td>Golf Only</td>
+                  </tr>
+                  <tr>
+                    <th>Total Booking Fee</th>
+                    <td>RM 185</td>
+                  </tr>
+                  <tr>
+                    <th>Booking Date/Time</th>
+                    <td>17:10 Saturday 24th June 2023</td>
+                  </tr>
+                  <tr>
+                    <th>Course</th>
+                    <td>Kinabalu Golf Club</td>
+                  </tr>
+                  <tr>
+                    <th>Holes</th>
+                    <td>18</td>
+                  </tr>
+                  <tr>
+                    <th>Number of Golfers</th>
+                    <td>1</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <FormGroup>
               <FormControlLabel
@@ -202,6 +246,7 @@ const Confirmation = () => {
           </button>
         </div>
       </div>
+      <FooterV2 />
     </div>
   );
 };
