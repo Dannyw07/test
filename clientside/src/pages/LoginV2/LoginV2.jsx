@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import validation from "../../components/LoginValidation";
 import Navbarv2 from "../../components/Navbarv2/Navbarv2";
+import FooterV2 from "../../components/Footerv2/FooterV2";
 
 const LoginV2 = () => {
   const [values, setValues] = useState({
@@ -73,66 +74,69 @@ const LoginV2 = () => {
   }, []);
 
   return (
-    <div>
+    <div className="loGin">
       <Navbarv2 />
-      <div className="regContainer">
-        <div className="regTitle">
-          <h3>Login Now</h3>
-        </div>
-        <form onSubmit={handleSubmit}>
-          <div className="regInputs">
-            {/* To login user email */}
-            <div className="regInput">
-              <h6>Email</h6>
-              <input
-                type="text"
-                placeholder="Enter Email"
-                name="email"
-                className="regInputClass"
-                // onChange={(e) =>
-                //   setValues({ ...values, email: e.target.value })
-                // }
-                onChange={handleInput}
-              />
-              {error.email && (
-                <span className="ErrorMessage" style={{ color: "red" }}>
-                  {error.email}
-                </span>
-              )}
-            </div>
-            {/* To login user password */}
-            <div className="regInput">
-              <h6>Password</h6>
-              <input
-                type="password"
-                placeholder="Enter Password"
-                name="password"
-                className="regInputClass"
-                // onChange={(e) =>
-                //   setValues({ ...values, password: e.target.value })
-                // }
-                onChange={handleInput}
-              />
-              {error.password && (
-                <span className="ErrorMessage" style={{ color: "red" }}>
-                  {error.password}
-                </span>
-              )}
-            </div>
+      <div className="loginVersionTwo">
+        <div className="loginContainer">
+          <div className="regTitle">
+            <h3>Login Now</h3>
           </div>
-          <div className="regButts">
-            <button type="submit" className="registerButton">
-              Sign In
-            </button>
+          <form onSubmit={handleSubmit}>
+            <div className="regInputs">
+              {/* To login user email */}
+              <div className="regInput">
+                <h6>Email</h6>
+                <input
+                  type="text"
+                  placeholder="Enter Email"
+                  name="email"
+                  className="regInputClass"
+                  // onChange={(e) =>
+                  //   setValues({ ...values, email: e.target.value })
+                  // }
+                  onChange={handleInput}
+                />
+                {error.email && (
+                  <span className="ErrorMessage" style={{ color: "red" }}>
+                    {error.email}
+                  </span>
+                )}
+              </div>
+              {/* To login user password */}
+              <div className="regInput">
+                <h6>Password</h6>
+                <input
+                  type="password"
+                  placeholder="Enter Password"
+                  name="password"
+                  className="regInputClass"
+                  // onChange={(e) =>
+                  //   setValues({ ...values, password: e.target.value })
+                  // }
+                  onChange={handleInput}
+                />
+                {error.password && (
+                  <span className="ErrorMessage" style={{ color: "red" }}>
+                    {error.password}
+                  </span>
+                )}
+              </div>
+            </div>
+            <div className="regButts">
+              <button type="submit" className="registerButton">
+                Sign In
+              </button>
+            </div>
+          </form>
+          <div className="createAcc">
+            Don't have an account?
+            <Link style={{ textDecoration: "none" }} to="/register">
+              Create Account
+            </Link>
           </div>
-        </form>
-        <div className="createAcc">
-          Don't have an account?
-          <Link style={{ textDecoration: "none" }} to="/register">
-            Create Account
-          </Link>
         </div>
       </div>
+      <FooterV2 />
     </div>
   );
 };

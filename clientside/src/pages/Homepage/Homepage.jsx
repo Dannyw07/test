@@ -1,7 +1,7 @@
 import React from "react";
 // import Navbar from "../../components/Navbar/Navbar";
 import Carousell from "../../components/Carousel/Carousell";
-import Footer from "../../components/Footer/Footer";
+import Footerv2 from "../../components/Footerv2/FooterV2";
 import MainContainer from "../../components/MainContainer/MainContainer";
 import PersonOne from "../../components/Images/PersonOne.png";
 import "./homepage.css";
@@ -33,7 +33,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <Footer />
+      <Footerv2 />
     </div>
   );
 };
